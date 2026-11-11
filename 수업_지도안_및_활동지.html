@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>중학교 1학년 사회 수업 지도안 & 학생 활동지 [재판의 종류와 공정한 재판]</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #5A4FCF;
+      --primary-light: #ECEBFF;
+      --secondary: #E85D75;
+      --bg: #F8FAFC;
+      --card-border: 1px solid #E2E8F0;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: var(--bg);
+      color: #2D3748;
+      line-height: 1.6;
+      padding: 30px 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Jua', sans-serif;
+      color: #1A202C;
+    }
+    h1 {
+      font-size: 28px;
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .sub-header {
+      text-align: center;
+      color: #718096;
+      font-size: 15px;
+      margin-bottom: 30px;
+      border-bottom: 2px dashed #E2E8F0;
+      padding-bottom: 15px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 700;
+      background: var(--primary-light);
+      color: var(--primary);
+      margin-right: 6px;
+    }
+    .section-title {
+      font-size: 20px;
+      margin: 28px 0 14px;
+      padding-left: 12px;
+      border-left: 5px solid var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      font-size: 14px;
+    }
+    th, td {
+      border: 1px solid #CBD5E0;
+      padding: 10px 14px;
+      text-align: left;
+    }
+    th {
+      background: #EDF2F7;
+      font-weight: 700;
+      color: #2D3748;
+    }
+    .plan-table th {
+      width: 18%;
+      text-align: center;
+    }
+    .activity-sheet {
+      border: 2px solid #CBD5E0;
+      border-radius: 12px;
+      padding: 25px;
+      margin-top: 30px;
+      background: #FFFDF9;
+      position: relative;
+    }
+    .activity-sheet::after {
+      content: '✂️ 절취선 또는 학생 배부용 출력 구역';
+      position: absolute;
+      top: -12px;
+      left: 20px;
+      background: #FFFDF9;
+      padding: 0 10px;
+      font-size: 12px;
+      color: #A0AEC0;
+      font-weight: bold;
+    }
+    .student-info {
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+      font-size: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    .question-box {
+      background: white;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 8px;
+      color: #2B6CB0;
+    }
+    .btn-print {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 28px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 9999px;
+      font-family: 'Jua', sans-serif;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(90, 79, 207, 0.3);
+    }
+    .btn-print:hover {
+      background: #483EA8;
+    }
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .container {
+        box-shadow: none;
+        padding: 10px;
+      }
+      .btn-print, .no-print {
+        display: none !important;
+      }
+      .activity-sheet {
+        page-break-before: always;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="no-print" style="text-align: right; margin-bottom: 10px;">
+      <a href="index.html" style="text-decoration: none; color: var(--primary); font-weight: bold;">➔ 게임으로 바로 이동하기 🎮</a>
+    </div>
+
+    <h1>중학교 1학년 사회과 본시 교수·학습 지도안</h1>
+    <div class="sub-header">
+      단원: Ⅳ. 개인과 사회생활 - 2. 법의 의미와 재판의 종류 / 3. 공정한 재판
+    </div>
+
+    <!-- 1. 단원 개요 -->
+    <div class="section-title">📌 단원 개요 및 학습 목표</div>
+    <table>
+      <tr>
+        <th>대상</th>
+        <td>중학교 1학년</td>
+        <th>지도 일시</th>
+        <td>1차시 (45분)</td>
+      </tr>
+      <tr>
+        <th>학습 주제</th>
+        <td colspan="3">재판의 종류(민사·형사)와 공정한 재판을 위한 제도(3심제, 무죄 추정)</td>
+      </tr>
+      <tr>
+        <th>학습 목표</th>
+        <td colspan="3">
+          1. 민사 재판과 형사 재판의 목적, 당사자, 대상 사건을 비교하여 구분할 수 있다.<br>
+          2. 법정의 구조와 판사, 검사, 변호인의 역할을 이해하고 올바른 자리에 배치할 수 있다.<br>
+          3. 공정한 재판을 위한 헌법상 원칙(무죄 추정, 증거 재판주의)과 3심제의 필요성을 설명할 수 있다.
+        </td>
+      </tr>
+      <tr>
+        <th>수업 형태</th>
+        <td>스마트 기기(태블릿/크롬북) 활용 개별/모둠 게임 기반 학습 (GBL)</td>
+        <th>수업 매체</th>
+        <td>교사용 전자칠판, 학생용 태블릿, <strong>'동물 법정 게임(index.html)'</strong>, 학습 활동지</td>
+      </tr>
+    </table>
+
+    <!-- 2. 교수 학습 과정안 -->
+    <div class="section-title">⏱️ 교수·학습 과정 (45분)</div>
+    <table class="plan-table">
+      <thead>
+        <tr>
+          <th>단계 (시간)</th>
+          <th>학습 내용</th>
+          <th>교수·학습 활동 (교사 & 학생)</th>
+          <th>지도상 유의점 및 자료</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align:center;"><strong>도입<br>(7분)</strong></td>
+          <td>
+            <strong>동기 유발 및<br>학습 목표 확인</strong>
+          </td>
+          <td>
+            • 일상 속 갈등 사례 제시: "친구에게 돈을 빌려줬는데 안 갚을 때 vs 길거리에서 도둑을 맞았을 때"<br>
+            • 두 사건을 해결하는 방법의 차이점을 생각해보게 유도<br>
+            • 오늘 활동할 웹 게임 <strong>'동물 법정: 판사 바니의 재판 모험'</strong> 소개 및 목표 확인
+          </td>
+          <td>• 흥미 유발 질문<br>• 판사 바니 인트로 화면 제시</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;"><strong>전개 1<br>(12분)</strong></td>
+          <td>
+            <strong>민사 재판 vs 형사 재판<br>& 법정의 자리</strong>
+          </td>
+          <td>
+            • [게임 Stage 1 실행]: 사건 의뢰서를 보고 민사/형사 분류 게임 수행 (원고-피고 vs 검사-피고인 차이점 정리)<br>
+            • [게임 Stage 2 실행]: 법정 좌석 배치 퍼즐 맞추기<br>
+            - 판사석이 가장 높은 이유(권위와 중립), 검사와 변호인의 대립 구도 이해<br>
+            • 활동지 1번~2번 문항 작성
+          </td>
+          <td>• 태블릿 화면 모니터링<br>• 오답 시 피드백 박스의 판사 힌트 적극 읽도록 지도</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;"><strong>전개 2<br>(16분)</strong></td>
+          <td>
+            <strong>사건 해결 시뮬레이션<br>& 3심제의 원리</strong>
+          </td>
+          <td>
+            • [게임 Stage 3 실행]: '케이크 도난 사건' 진행<br>
+            - <strong>무죄 추정의 원칙</strong> 직접 선택<br>
+            - 현장 증거 3종 조사(증거 재판주의 체득)<br>
+            - 법봉 3타격 판결 선고 체험<br>
+            • [게임 Stage 4 실행]: 3심제 사다리 타기<br>
+            - 1심(지방법원) ➔ 항소 ➔ 2심(고등법원) ➔ 상고 ➔ 3심(대법원)<br>
+            - 3심제를 두는 이유(국민의 인권 보장 및 신중한 재판) 토의
+          </td>
+          <td>• 사법권의 독립의 중요성 함께 강조<br>• 법봉 효과음으로 현장감 조성</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;"><strong>정리<br>(10분)</strong></td>
+          <td>
+            <strong>골든벨 퀴즈 &<br>명예 판사 임명식</strong>
+          </td>
+          <td>
+            • [게임 Stage 5 실행]: 최종 임명 5문 퀴즈 풀기<br>
+            • 자신의 이름이 들어간 <strong>'명예 판사 임명장'</strong> 발급 및 성취감 고취<br>
+            • 핵심 내용 최종 3줄 요약 및 과제 안내
+          </td>
+          <td>• 인쇄 버튼을 통한 활동 포트폴리오 저장 안내</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button class="btn-print no-print" onclick="window.print()">🖨️ 지도안 및 아래 활동지 인쇄하기</button>
+
+    <!-- 3. 학생용 배부 활동지 -->
+    <div class="activity-sheet">
+      <h2 style="text-align: center; color: var(--primary); margin-bottom: 4px;">중1 사회 탐구 활동지: 나는 동물 법정의 명예 판사! ⚖️</h2>
+      <div class="student-info">
+        <span>1학년 ( &nbsp; )반 ( &nbsp; )번</span>
+        <span>이름: ( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )</span>
+      </div>
+
+      <!-- 탐구 1 -->
+      <div class="question-box">
+        <div class="question-title">1. [민사 재판 vs 형사 재판] 다음 빈칸을 알맞은 말로 채워보세요.</div>
+        <p style="font-size: 14px; margin-bottom: 8px;">
+          (1) 친구에게 빌려준 물건을 돌려받거나 손해 배상을 청구하는 재판은 ( <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong> ) 재판이다.<br>
+          (2) 도둑질, 폭행 등 사회 질서를 어긴 범죄자를 처벌하기 위한 재판은 ( <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong> ) 재판이다.<br>
+          (3) 형사 재판에서 피해자와 국민을 대신하여 범죄자를 법원에 재판해달라고 청구(기소)하는 사람은 ( <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong> )이다.
+        </p>
+      </div>
+
+      <!-- 탐구 2 -->
+      <div class="question-box">
+        <div class="question-title">2. [법정의 구성] 재판정에서 다음 역할을 맡은 사람을 선으로 연결해보세요.</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 14px;">
+          <div>
+            ① 판사 (토끼 바니)<br>
+            ② 검사 (여우 폭시)<br>
+            ③ 변호인 (곰 변호사)<br>
+            ④ 증인 (부엉이)
+          </div>
+          <div>
+            ㉠ 피고인의 억울함을 밝히고 법적 권리를 돕는다.<br>
+            ㉡ 법과 양심에 따라 공정하게 유·무죄를 판결한다.<br>
+            ㉢ 자신이 직접 목격한 사실을 정직하게 증언한다.<br>
+            ㉣ 국가를 대표하여 범죄를 밝히고 처벌을 요구한다.
+          </div>
+        </div>
+      </div>
+
+      <!-- 탐구 3 -->
+      <div class="question-box">
+        <div class="question-title">3. [공정한 재판의 원칙] 용어의 의미를 정확하게 적어보세요.</div>
+        <p style="font-size: 14px; line-height: 1.8;">
+          • <strong>무죄 추정의 원칙이란?</strong><br>
+          ( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )<br>
+          • <strong>증거 재판주의란?</strong><br>
+          ( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )
+        </p>
+      </div>
+
+      <!-- 탐구 4 -->
+      <div class="question-box">
+        <div class="question-title">4. [3심제 마스터] 아래 그림의 빈칸에 알맞은 법원 이름과 불복 절차를 쓰세요.</div>
+        <div style="background: white; border: 1px dashed #A0AEC0; padding: 15px; text-align: center; font-size: 14px; line-height: 2;">
+          [ 3심 ] 우리나라 최고 법원 : ( <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong> )<br>
+          ▲ 2심 판결에 불복하여 청구하는 절차 : ( <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong> )<br>
+          [ 2심 ] 두 번째 재판 법원 : ( <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong> )<br>
+          ▲ 1심 판결에 불복하여 청구하는 절차 : ( <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong> )<br>
+          [ 1심 ] 처음 재판을 받는 법원 : ( <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong> )
+        </div>
+      </div>
+
+      <!-- 탐구 5 -->
+      <div class="question-box" style="margin-bottom: 0;">
+        <div class="question-title">5. [수업 성찰] 오늘 명예 판사 체험을 통해 느낀 '공정한 재판'의 중요성을 한 줄로 적어보세요.</div>
+        <div style="border-bottom: 1.5px solid #CBD5E0; height: 35px; margin-top: 10px;"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

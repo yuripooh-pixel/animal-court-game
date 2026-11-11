@@ -1,0 +1,2852 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>정의의 동물 법정: 판사 바니의 단계별 재판 모험 ⚖️ | 중1 사회</title>
+  <!-- Google Fonts: Jua & Noto Sans KR -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-cream: #FFFDF9;
+      --bg-pastel-blue: #EBF4FF;
+      --bg-pastel-pink: #FFF0F5;
+      --bg-pastel-mint: #E8F8F5;
+      --bg-pastel-yellow: #FFF9E6;
+      --bg-pastel-purple: #F3E8FF;
+
+      --primary: #7C73E6;
+      --primary-light: #A594F9;
+      --primary-dark: #584EB7;
+      --secondary: #FF8BA7;
+      --secondary-light: #FFC6C7;
+      --accent-mint: #48C9B0;
+      --accent-yellow: #FFD166;
+      --accent-blue: #5DADE2;
+
+      --court-wood: #C49A6C;
+      --court-wood-dark: #8D5B36;
+      --court-wood-light: #E4C59E;
+
+      --text-main: #333C4E;
+      --text-muted: #6B7280;
+      --text-light: #FFFFFF;
+
+      --card-bg: rgba(255, 255, 255, 0.96);
+      --card-shadow: 0 12px 30px rgba(124, 115, 230, 0.12);
+      --card-border: 2px solid rgba(220, 226, 240, 0.85);
+      
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 32px;
+      --radius-full: 9999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: radial-gradient(circle at 10% 20%, #FFF5F7 0%, transparent 40%),
+                  radial-gradient(circle at 90% 80%, #EBF4FF 0%, transparent 40%),
+                  linear-gradient(135deg, #FFFDF9 0%, #F5F1FF 50%, #EBF8FF 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      user-select: none;
+    }
+
+    /* 배경 귀여운 플로팅 장식들 */
+    .bg-deco {
+      position: fixed;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.35;
+      animation: floatSlow 8s ease-in-out infinite alternate;
+    }
+    @keyframes floatSlow {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(-25px) rotate(8deg); }
+    }
+
+    h1, h2, h3, h4, .font-jua {
+      font-family: 'Jua', 'Noto Sans KR', sans-serif;
+      letter-spacing: 0.5px;
+    }
+
+    /* 상단 헤더 네비게이션 */
+    header {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid #EAE6DF;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #A594F9, #7C73E6);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(124, 115, 230, 0.3);
+      font-size: 24px;
+    }
+
+    .brand-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-badge {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 11px;
+      background: #FFE3EC;
+      color: #D81B60;
+      padding: 3px 8px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 2px solid #EAE6DF;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .btn-icon:hover {
+      transform: translateY(-2px);
+      border-color: var(--primary);
+      background: #F8F7FF;
+    }
+
+    .btn-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      font-size: 14px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: 'Jua', sans-serif;
+      text-decoration: none;
+    }
+
+    .btn-pill-primary {
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      color: white;
+      box-shadow: 0 4px 12px rgba(124, 115, 230, 0.3);
+    }
+
+    .btn-pill-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(124, 115, 230, 0.4);
+    }
+
+    .btn-pill-secondary {
+      background: var(--bg-pastel-pink);
+      color: #D81B60;
+      border: 1.5px solid #FFC6D9;
+    }
+
+    .btn-pill-secondary:hover {
+      background: #FFE4EC;
+    }
+
+    .btn-pill-mint {
+      background: var(--bg-pastel-mint);
+      color: #0E7490;
+      border: 1.5px solid #A5F3FC;
+    }
+
+    /* 메인 컨테이너 */
+    main {
+      flex: 1;
+      max-width: 1050px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 24px 20px 50px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* 상단 스테이지 진행도 네비바 */
+    .stage-tracker {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 12px 20px;
+      box-shadow: var(--card-shadow);
+      border: var(--card-border);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      overflow-x: auto;
+    }
+
+    .stage-step {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all 0.25s ease;
+      opacity: 0.55;
+      background: transparent;
+      border: 1.5px solid transparent;
+      white-space: nowrap;
+    }
+
+    .stage-step:hover {
+      opacity: 0.9;
+      background: #F7F7FD;
+    }
+
+    .stage-step.active {
+      opacity: 1;
+      background: #EEECFF;
+      border-color: var(--primary);
+      box-shadow: 0 3px 10px rgba(124, 115, 230, 0.2);
+    }
+
+    .stage-step.completed {
+      opacity: 0.9;
+      background: #E8F8F5;
+      border-color: #A3E4D7;
+    }
+
+    .stage-step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #D9D7ED;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .stage-step.active .stage-step-num {
+      background: var(--primary);
+    }
+
+    .stage-step.completed .stage-step-num {
+      background: var(--accent-mint);
+    }
+
+    .stage-step-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .stage-step-divider {
+      flex: 1;
+      height: 3px;
+      background: #EDEBF5;
+      min-width: 15px;
+      max-width: 35px;
+      border-radius: 3px;
+    }
+
+    /* 화면 섹션 */
+    .screen {
+      display: none;
+      animation: screenFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .screen.active {
+      display: block;
+    }
+
+    @keyframes screenFadeIn {
+      from { opacity: 0; transform: translateY(12px) scale(0.99); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* 귀여운 배너 카드 */
+    .banner-card {
+      background: linear-gradient(135deg, #FFFFFF 0%, #F8F6FF 100%);
+      border-radius: var(--radius-lg);
+      border: var(--card-border);
+      box-shadow: var(--card-shadow);
+      padding: 32px 28px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .banner-card::before {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(165, 148, 249, 0.22) 0%, transparent 70%);
+      top: -80px;
+      right: -80px;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .banner-title {
+      font-size: 28px;
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+    }
+
+    .banner-desc {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* 버튼 스타일들 */
+    .btn-action {
+      font-family: 'Jua', sans-serif;
+      font-size: 18px;
+      padding: 14px 34px;
+      border-radius: var(--radius-full);
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn-action:hover {
+      transform: translateY(-3px) scale(1.02);
+    }
+
+    .btn-action:active {
+      transform: translateY(1px) scale(0.98);
+    }
+
+    .btn-primary-action {
+      background: linear-gradient(135deg, #8A7CF3, #6B5BE2);
+      color: white;
+      box-shadow: 0 8px 20px rgba(107, 91, 226, 0.35);
+    }
+
+    .btn-primary-action:hover {
+      box-shadow: 0 12px 25px rgba(107, 91, 226, 0.45);
+    }
+
+    .btn-accent-action {
+      background: linear-gradient(135deg, #FF9EAA, #FF6F91);
+      color: white;
+      box-shadow: 0 8px 20px rgba(255, 111, 145, 0.35);
+    }
+
+    /* 인라인 귀여운 캐릭터 컨테이너 */
+    .char-container {
+      display: inline-block;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.08));
+      transition: transform 0.3s ease;
+    }
+
+    .char-container:hover {
+      transform: scale(1.04) rotate(1.5deg);
+    }
+
+    .bounce {
+      animation: charBounce 2.5s infinite ease-in-out;
+    }
+
+    @keyframes charBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* 팝업 모달 */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(30, 41, 59, 0.55);
+      backdrop-filter: blur(6px);
+      z-index: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .modal-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      max-width: 800px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+      transform: translateY(20px) scale(0.96);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      padding: 32px;
+      position: relative;
+      border: 3px solid #EDE9FE;
+    }
+
+    .modal-backdrop.active .modal-card {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #F3F4F6;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+      color: #6B7280;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .modal-close:hover {
+      background: #E5E7EB;
+      color: #111827;
+      transform: rotate(90deg);
+    }
+
+    /* 토스트 알림 */
+    #toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: rgba(30, 41, 59, 0.95);
+      color: white;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      font-size: 15px;
+      font-weight: 600;
+      z-index: 1000;
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      pointer-events: none;
+    }
+
+    #toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* ==================== STAGE 1 : 민사 vs 형사 ==================== */
+    .case-card-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      margin: 15px 0;
+    }
+
+    .case-card {
+      background: white;
+      border: 3px solid #DFDCF7;
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      max-width: 620px;
+      width: 100%;
+      box-shadow: 0 12px 30px rgba(124, 115, 230, 0.14);
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s;
+    }
+
+    .case-tag {
+      display: inline-block;
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
+      background: #E8E5FA;
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .case-story {
+      font-size: 19px;
+      font-weight: 700;
+      color: #2D3748;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .case-clue {
+      background: #FFFBEB;
+      border-left: 4px solid #F59E0B;
+      padding: 12px 16px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 14px;
+      color: #92400E;
+      text-align: left;
+    }
+
+    .choice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      width: 100%;
+      max-width: 620px;
+      margin-top: 10px;
+    }
+
+    .btn-court-choice {
+      padding: 24px 20px;
+      border-radius: var(--radius-md);
+      border: 3px solid transparent;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      background: white;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .btn-court-choice:hover {
+      transform: translateY(-5px);
+    }
+
+    .btn-civil {
+      border-color: #BEE3F8;
+      background: linear-gradient(180deg, #FFFFFF 0%, #EBF8FF 100%);
+    }
+
+    .btn-civil:hover {
+      border-color: #63B3ED;
+      box-shadow: 0 12px 25px rgba(66, 153, 225, 0.25);
+    }
+
+    .btn-criminal {
+      border-color: #FED7D7;
+      background: linear-gradient(180deg, #FFFFFF 0%, #FFF5F5 100%);
+    }
+
+    .btn-criminal:hover {
+      border-color: #FC8181;
+      box-shadow: 0 12px 25px rgba(245, 101, 101, 0.25);
+    }
+
+    .choice-icon {
+      font-size: 40px;
+    }
+
+    .choice-name {
+      font-family: 'Jua', sans-serif;
+      font-size: 24px;
+      color: #2D3748;
+    }
+
+    .choice-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    /* 피드백 박스 */
+    .feedback-box {
+      border-radius: var(--radius-md);
+      padding: 18px 24px;
+      margin-top: 20px;
+      display: none;
+      animation: slideUp 0.3s ease;
+      width: 100%;
+      max-width: 620px;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .feedback-box.correct {
+      background: #DEF7EC;
+      border: 2px solid #84E1BC;
+      color: #03543F;
+    }
+
+    .feedback-box.wrong {
+      background: #FDE8E8;
+      border: 2px solid #F8B4B4;
+      color: #9B1C1C;
+    }
+
+    .feedback-title {
+      font-family: 'Jua', sans-serif;
+      font-size: 18px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ==================== STAGE 2 : 법정 좌석 배치 퍼즐 ==================== */
+    .court-room-layout {
+      background: linear-gradient(180deg, #FFF9F2 0%, #EBF2FA 100%);
+      border: 4px solid var(--court-wood);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      margin-bottom: 24px;
+      min-height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .court-bench-top {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .court-middle-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin: 10px 0;
+    }
+
+    .court-witness-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .court-bottom-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 18px;
+      border-top: 2.5px dashed #C49A6C;
+      padding-top: 16px;
+    }
+
+    .drop-zone {
+      width: 200px;
+      min-height: 130px;
+      border: 2.5px dashed #A0AEC0;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.85);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      transition: all 0.25s;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .drop-zone.zone-highlight {
+      border-color: var(--primary);
+      background: #F0EDFF;
+      transform: scale(1.03);
+    }
+
+    .drop-zone.filled {
+      border: 2.5px solid var(--accent-mint);
+      background: #F0FDF4;
+    }
+
+    .zone-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: #4A5568;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+
+    .court-bench-top .drop-zone {
+      width: 290px;
+      background: linear-gradient(180deg, #FFF7ED 0%, #FFEED9 100%);
+      border-color: var(--court-wood);
+    }
+
+    /* 캐릭터 인형(트레이) */
+    .char-tray {
+      background: white;
+      border-radius: var(--radius-lg);
+      border: var(--card-border);
+      padding: 20px;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .draggable-char {
+      padding: 12px 14px;
+      background: #F8F9FA;
+      border: 2px solid #E2E8F0;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+      width: 140px;
+    }
+
+    .draggable-char:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+      border-color: var(--primary);
+    }
+
+    .draggable-char.selected {
+      border-color: var(--primary);
+      background: #EEECFF;
+      transform: scale(1.05);
+      box-shadow: 0 8px 18px rgba(124, 115, 230, 0.3);
+    }
+
+    .draggable-char.placed {
+      opacity: 0.35;
+      pointer-events: none;
+      filter: grayscale(0.85);
+    }
+
+    .char-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .char-role {
+      font-size: 11px;
+      color: var(--primary);
+      background: #E8E5FA;
+      padding: 2px 6px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* ==================== STAGE 3 : 사건 해결 스토리 ==================== */
+    .story-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      border: var(--card-border);
+      box-shadow: var(--card-shadow);
+      padding: 28px;
+      margin-bottom: 20px;
+    }
+
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      background: linear-gradient(135deg, #FF9EAA, #FF6F91);
+      color: white;
+      font-family: 'Jua', sans-serif;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+
+    .evidence-item {
+      border: 2px solid #E2E8F0;
+      border-radius: var(--radius-md);
+      padding: 18px;
+      background: #F8FAFC;
+      cursor: pointer;
+      transition: all 0.25s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+    }
+
+    .evidence-item:hover {
+      border-color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+    }
+
+    .evidence-item.inspected {
+      border-color: var(--accent-mint);
+      background: #F0FDF4;
+    }
+
+    .evidence-icon {
+      font-size: 34px;
+    }
+
+    .evidence-title {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text-main);
+    }
+
+    .evidence-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .gavel-action-area {
+      background: linear-gradient(180deg, #FFFDF8 0%, #FFF3E0 100%);
+      border: 3px solid var(--court-wood);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      text-align: center;
+      margin: 24px 0;
+    }
+
+    .gavel-btn {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #DEB887, #8B5A2B);
+      border: 4px solid white;
+      box-shadow: 0 10px 25px rgba(139, 90, 43, 0.4);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      margin: 15px auto;
+      transition: all 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .gavel-btn:hover {
+      transform: scale(1.08);
+    }
+
+    .gavel-btn:active {
+      transform: scale(0.92) rotate(-15deg);
+    }
+
+    .gavel-hit-count {
+      font-family: 'Jua', sans-serif;
+      font-size: 20px;
+      color: var(--court-wood-dark);
+      font-weight: 700;
+    }
+
+    /* ==================== STAGE 4 : 3심제 모험 ==================== */
+    .appeals-court-tower {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 20px 0;
+      max-width: 750px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .court-tier-card {
+      background: white;
+      border: 3px solid #E2E8F0;
+      border-radius: var(--radius-lg);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .court-tier-card.tier-3 {
+      border-color: #FED7AA;
+      background: linear-gradient(135deg, #FFFFFF 0%, #FFF7ED 100%);
+    }
+
+    .court-tier-card.tier-2 {
+      border-color: #BFDBFE;
+      background: linear-gradient(135deg, #FFFFFF 0%, #EFF6FF 100%);
+    }
+
+    .court-tier-card.tier-1 {
+      border-color: #DDD6FE;
+      background: linear-gradient(135deg, #FFFFFF 0%, #F5F3FF 100%);
+    }
+
+    .tier-badge {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: white;
+      border: 3px solid currentColor;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Jua', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .tier-info {
+      flex: 1;
+    }
+
+    .tier-name {
+      font-family: 'Jua', sans-serif;
+      font-size: 20px;
+      margin-bottom: 4px;
+      color: #2D3748;
+    }
+
+    .tier-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .appeal-connector {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: #94A3B8;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 4px 0;
+    }
+
+    .appeal-action-btn {
+      padding: 8px 18px;
+      border-radius: var(--radius-full);
+      font-size: 13px;
+      font-weight: 700;
+      background: #FFE8EC;
+      color: #D81B60;
+      border: 1px solid #FFC2D1;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'Jua', sans-serif;
+    }
+
+    .appeal-action-btn:hover {
+      background: #FFD1DC;
+      transform: scale(1.05);
+    }
+
+    /* ==================== STAGE 5 : 퀴즈 & 임명장 ==================== */
+    .quiz-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      border: var(--card-border);
+      padding: 30px;
+      box-shadow: var(--card-shadow);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .quiz-num {
+      display: inline-block;
+      padding: 4px 12px;
+      background: var(--bg-pastel-purple);
+      color: var(--primary);
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .quiz-question {
+      font-size: 19px;
+      font-weight: 700;
+      color: #2D3748;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .quiz-opt-btn {
+      padding: 14px 18px;
+      border-radius: var(--radius-md);
+      border: 2px solid #E2E8F0;
+      background: #F8FAFC;
+      text-align: left;
+      font-size: 15px;
+      font-weight: 600;
+      color: #334155;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .quiz-opt-btn:hover {
+      background: #EEF2FF;
+      border-color: #A5B4FC;
+      transform: translateX(4px);
+    }
+
+    .quiz-opt-btn.correct {
+      background: #DEF7EC;
+      border-color: #31C48D;
+      color: #03543F;
+    }
+
+    .quiz-opt-btn.wrong {
+      background: #FDE8E8;
+      border-color: #F98080;
+      color: #9B1C1C;
+    }
+
+    /* 명예 판사 임명장 (인쇄 및 디자인) */
+    .certificate-card {
+      background: #FFFDF9;
+      border: 12px solid #EEDBC5;
+      outline: 3px solid #B8860B;
+      outline-offset: -8px;
+      border-radius: 18px;
+      padding: 45px 36px;
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+      background-image: radial-gradient(#F5EADB 1.5px, transparent 1.5px);
+      background-size: 22px 22px;
+    }
+
+    .cert-title {
+      font-family: 'Jua', sans-serif;
+      font-size: 34px;
+      color: #795548;
+      margin-bottom: 6px;
+    }
+
+    .cert-subtitle {
+      font-size: 14px;
+      color: #A1887F;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      margin-bottom: 24px;
+    }
+
+    .cert-recipient {
+      font-size: 24px;
+      font-weight: 900;
+      color: #3E2723;
+      border-bottom: 2.5px solid #8D6E63;
+      display: inline-block;
+      padding: 4px 35px;
+      margin-bottom: 22px;
+    }
+
+    .cert-body {
+      font-size: 15.5px;
+      line-height: 1.85;
+      color: #4E342E;
+      margin-bottom: 30px;
+      word-break: keep-all;
+    }
+
+    .cert-seal {
+      width: 95px;
+      height: 95px;
+      border-radius: 50%;
+      background: #D32F2F;
+      color: white;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Jua', sans-serif;
+      font-size: 15px;
+      box-shadow: 0 6px 15px rgba(211, 47, 47, 0.4);
+      transform: rotate(-10deg);
+      border: 3px dashed #FFCDD2;
+    }
+
+    /* 요약 표 */
+    .summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    .summary-table th, .summary-table td {
+      border: 1.5px solid #E2E8F0;
+      padding: 12px 14px;
+      text-align: left;
+    }
+
+    .summary-table th {
+      background: #F1F5F9;
+      color: #334155;
+      font-weight: 700;
+    }
+
+    .summary-table tr:nth-child(even) {
+      background: #F8FAFC;
+    }
+
+    /* 반응형 스타일 */
+    @media (max-width: 768px) {
+      .choice-grid {
+        grid-template-columns: 1fr;
+      }
+      .court-middle-row {
+        flex-direction: column;
+      }
+      .court-bottom-row {
+        flex-direction: column;
+        align-items: center;
+      }
+      .header-controls .btn-pill span {
+        display: none;
+      }
+      .brand-title {
+        font-size: 17px;
+      }
+      .banner-title {
+        font-size: 22px;
+      }
+    }
+
+    /* 프린트 전용 스타일 */
+    @media print {
+      body {
+        background: white !important;
+      }
+      header, .stage-tracker, .controls-bottom, #toast, .modal-backdrop, .no-print, .bg-deco {
+        display: none !important;
+      }
+      .certificate-card {
+        box-shadow: none !important;
+        border: 8px solid #C49A6C !important;
+        page-break-inside: avoid;
+        margin: 20px auto !important;
+      }
+      .screen {
+        display: none !important;
+      }
+      #screen-stage5 {
+        display: block !important;
+      }
+      #s5-quiz-view {
+        display: none !important;
+      }
+      #s5-cert-view {
+        display: block !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 배경 플로팅 파스텔 장식 아이콘들 -->
+  <div class="bg-deco" style="top: 15%; left: 4%; font-size: 40px;">⚖️</div>
+  <div class="bg-deco" style="top: 25%; right: 5%; font-size: 45px; animation-delay: -3s;">🌸</div>
+  <div class="bg-deco" style="bottom: 20%; left: 6%; font-size: 38px; animation-delay: -5s;">⭐</div>
+  <div class="bg-deco" style="bottom: 12%; right: 7%; font-size: 42px; animation-delay: -2s;">📜</div>
+
+  <!-- 상단 네비게이션 헤더 -->
+  <header>
+    <div class="brand" onclick="game.goToStage(0)">
+      <div class="brand-icon">⚖️</div>
+      <div>
+        <h1 class="brand-title">
+          정의의 동물 법정: 판사 바니의 모험
+          <span class="brand-badge">중1 사회</span>
+        </h1>
+      </div>
+    </div>
+
+    <div class="header-controls">
+      <!-- 교사용 지도안 링크 -->
+      <a href="수업_지도안_및_활동지.html" class="btn-pill btn-pill-mint" target="_blank" title="새 탭에서 수업 지도안 및 학생 활동지 열기">
+        📝 <span>수업지도안&활동지</span>
+      </a>
+
+      <!-- 교사용 핵심 요약 모달 버튼 -->
+      <button class="btn-pill btn-pill-secondary" onclick="ui.openModal('teacher-modal')" title="중1 핵심 요약 보기">
+        📖 <span>핵심 쏙쏙 요약장</span>
+      </button>
+
+      <!-- 사운드 토글 버튼 -->
+      <button class="btn-icon" id="btn-sound" onclick="audioManager.toggleSound()" title="소리 켜기/끄기">
+        🔊
+      </button>
+
+      <!-- 전체화면 토글 버튼 -->
+      <button class="btn-icon" onclick="ui.toggleFullScreen()" title="전체화면 전환">
+        ⛶
+      </button>
+    </div>
+  </header>
+
+  <!-- 메인 게임 영역 -->
+  <main>
+    <!-- 단계별 트래커 (진행률 표시 및 스테이지 바로가기) -->
+    <div class="stage-tracker" id="stage-tracker">
+      <div class="stage-step active" onclick="game.goToStage(0)" data-stage="0">
+        <div class="stage-step-num">0</div>
+        <div class="stage-step-title">입학식</div>
+      </div>
+      <div class="stage-step-divider"></div>
+      <div class="stage-step" onclick="game.goToStage(1)" data-stage="1">
+        <div class="stage-step-num">1</div>
+        <div class="stage-step-title">민사 vs 형사</div>
+      </div>
+      <div class="stage-step-divider"></div>
+      <div class="stage-step" onclick="game.goToStage(2)" data-stage="2">
+        <div class="stage-step-num">2</div>
+        <div class="stage-step-title">법정의 자리</div>
+      </div>
+      <div class="stage-step-divider"></div>
+      <div class="stage-step" onclick="game.goToStage(3)" data-stage="3">
+        <div class="stage-step-num">3</div>
+        <div class="stage-step-title">사건의 진실</div>
+      </div>
+      <div class="stage-step-divider"></div>
+      <div class="stage-step" onclick="game.goToStage(4)" data-stage="4">
+        <div class="stage-step-num">4</div>
+        <div class="stage-step-title">3심제 모험</div>
+      </div>
+      <div class="stage-step-divider"></div>
+      <div class="stage-step" onclick="game.goToStage(5)" data-stage="5">
+        <div class="stage-step-num">5</div>
+        <div class="stage-step-title">골든벨&임명장</div>
+      </div>
+    </div>
+
+    <!-- ==================== STAGE 0 : 인트로 / 시작 화면 ==================== -->
+    <section class="screen active" id="screen-stage0">
+      <div class="banner-card">
+        <div class="char-container bounce" style="margin-bottom: 15px;">
+          <!-- 바니 판사 토끼 SVG 캐릭터 (고해상도 귀여운 벡터) -->
+          <svg width="150" height="150" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="80" cy="150" rx="55" ry="8" fill="#E2E8F0"/>
+            <!-- 귀 왼쪽 -->
+            <path d="M55 20 C45 0, 30 25, 45 60 Z" fill="#FFE8EC" stroke="#4A5568" stroke-width="3"/>
+            <path d="M52 24 C45 10, 35 28, 47 54 Z" fill="#FFB7C5"/>
+            <!-- 귀 오른쪽 -->
+            <path d="M105 20 C115 0, 130 25, 115 60 Z" fill="#FFE8EC" stroke="#4A5568" stroke-width="3"/>
+            <path d="M108 24 C115 10, 125 28, 113 54 Z" fill="#FFB7C5"/>
+            <!-- 머리 -->
+            <ellipse cx="80" cy="72" rx="42" ry="36" fill="#FFFFFF" stroke="#4A5568" stroke-width="3"/>
+            <!-- 볼터치 -->
+            <circle cx="56" cy="80" r="7" fill="#FFAAA6" opacity="0.6"/>
+            <circle cx="104" cy="80" r="7" fill="#FFAAA6" opacity="0.6"/>
+            <!-- 눈 -->
+            <circle cx="65" cy="70" r="4.5" fill="#2D3748"/>
+            <circle cx="66.5" cy="68.5" r="1.5" fill="#FFFFFF"/>
+            <circle cx="95" cy="70" r="4.5" fill="#2D3748"/>
+            <circle cx="96.5" cy="68.5" r="1.5" fill="#FFFFFF"/>
+            <!-- 코와 입 -->
+            <polygon points="80,76 77,73 83,73" fill="#FF8BA7"/>
+            <path d="M76 79 Q80 83 80 81 Q80 83 84 79" stroke="#4A5568" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <!-- 법복 가운 몸통 -->
+            <path d="M42 145 C42 100, 60 95, 80 95 C100 95, 118 100, 118 145 Z" fill="#3A385E" stroke="#2D3748" stroke-width="3"/>
+            <!-- 법복 흰 깃 (칼라) -->
+            <polygon points="80,96 70,122 80,118 90,122" fill="#FFFFFF" stroke="#CBD5E0" stroke-width="1.5"/>
+            <line x1="80" y1="118" x2="80" y2="145" stroke="#F6AD55" stroke-width="3"/>
+            <!-- 손과 미니 법봉 -->
+            <circle cx="48" cy="120" r="8" fill="#FFFFFF" stroke="#4A5568" stroke-width="2.5"/>
+            <g transform="translate(112, 116) rotate(20)">
+              <circle cx="0" cy="0" r="8" fill="#FFFFFF" stroke="#4A5568" stroke-width="2.5"/>
+              <rect x="-3" y="-22" width="6" height="24" rx="2" fill="#B08968" stroke="#6F4E37" stroke-width="1.5"/>
+              <rect x="-10" y="-30" width="20" height="10" rx="3" fill="#8D5B36" stroke="#5C3A21" stroke-width="1.5"/>
+            </g>
+          </svg>
+        </div>
+
+        <h2 class="banner-title">정의의 동물 법정에 오신 것을 환영합니다! ⚖️</h2>
+        <p class="banner-desc" style="max-width: 680px; margin: 0 auto 24px;">
+          안녕! 나는 오늘 여러분을 명예 판사로 임명할 멘토 <strong>'토끼 판사 바니'</strong>야!<br>
+          우리 사회의 억울한 일을 풀고 갈등을 평화롭게 해결해 주는 <strong>'재판의 5가지 비밀'</strong>을 함께 모험해보자!
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+          <button class="btn-action btn-primary-action" onclick="game.startStage(1)">
+            🚀 재판 마스터 도전 시작하기!
+          </button>
+          <button class="btn-action btn-pill-secondary" onclick="ui.openModal('teacher-modal')">
+            📖 3분 핵심 요약 보기
+          </button>
+        </div>
+      </div>
+
+      <!-- 수업 목표 3대 카드 안내 -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px;">
+        <div style="background: white; border-radius: var(--radius-md); padding: 22px; border: var(--card-border); box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+          <div style="font-size: 28px; margin-bottom: 10px;">🤝 vs 🚨</div>
+          <h4 style="font-size: 17px; margin-bottom: 6px; color: var(--primary);">민사 재판 vs 형사 재판</h4>
+          <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.55;">
+            개인 사이의 다툼(돈, 물건 파손 등)을 해결하는 <strong>민사재판</strong>과 사회 질서를 어긴 범죄를 심판하는 <strong>형사재판</strong>의 차이를 명쾌하게 구분해요.
+          </p>
+        </div>
+
+        <div style="background: white; border-radius: var(--radius-md); padding: 22px; border: var(--card-border); box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+          <div style="font-size: 28px; margin-bottom: 10px;">🏛️ ⚖️ 📜</div>
+          <h4 style="font-size: 17px; margin-bottom: 6px; color: var(--primary);">법정의 구성과 역할</h4>
+          <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.55;">
+            판사, 검사, 변호인, 원고와 피고인 등 재판정에 모인 사람들의 자리와 고유한 권한을 직접 배치하며 완벽히 익혀요.
+          </p>
+        </div>
+
+        <div style="background: white; border-radius: var(--radius-md); padding: 22px; border: var(--card-border); box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+          <div style="font-size: 28px; margin-bottom: 10px;">🪜 ⚖️ ✨</div>
+          <h4 style="font-size: 17px; margin-bottom: 6px; color: var(--primary);">공정한 재판 & 3심제</h4>
+          <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.55;">
+            지방법원부터 대법원까지 왜 3번 재판받을 수 있는지, 무죄 추정의 원칙과 증거 재판주의 등 공정한 재판 제도를 탐구해요.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== STAGE 1 : 민사재판 vs 형사재판 ==================== -->
+    <section class="screen" id="screen-stage1">
+      <div class="banner-card" style="padding: 20px 24px;">
+        <span class="step-badge">STAGE 1</span>
+        <h2 style="font-size: 24px; color: var(--primary-dark); margin-bottom: 6px;">어떤 재판을 열어야 할까? 🤔</h2>
+        <p style="font-size: 14px; color: var(--text-muted);">
+          사건 의뢰서를 잘 읽고, <strong>개인 간의 다툼(민사재판)</strong>인지 <strong>사회의 범죄 처벌(형사재판)</strong>인지 골라줘!
+        </p>
+      </div>
+
+      <!-- 진행 상황 바 -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-weight: 700; font-size: 14px; color: var(--primary);">
+        <span>사건 진행도 <span id="s1-progress-num">1</span> / 5</span>
+        <span id="s1-score-display">정답: 0개</span>
+      </div>
+
+      <!-- 사건 카드 -->
+      <div class="case-card-container">
+        <div class="case-card" id="s1-case-card">
+          <span class="case-tag" id="s1-case-tag">사건 #1</span>
+          <div class="case-story" id="s1-case-text">
+            "토리 다람쥐가 꿀벌 친구에게 보관료를 주기로 약속하고 도토리를 빌렸는데, 기한이 지나도 도토리를 돌려주지 않아서 돌려받고 싶어요!"
+          </div>
+          <div class="case-clue" id="s1-case-hint">
+            💡 <strong>판사의 힌트:</strong> 개인과 개인 사이에 맺은 약속(계약)이나 금전적인 피해에 관한 다툼일까, 아니면 사회 전체를 위협한 범죄일까?
+          </div>
+        </div>
+
+        <!-- 선택지 버튼 -->
+        <div class="choice-grid">
+          <button class="btn-court-choice btn-civil" onclick="stage1.selectChoice('민사')">
+            <div class="choice-icon">🤝</div>
+            <div class="choice-name">민사 재판 (Civil)</div>
+            <div class="choice-sub">
+              개인 사이의 권리 다툼이나<br>손해 배상을 요구할 때! (원고 vs 피고)
+            </div>
+          </button>
+
+          <button class="btn-court-choice btn-criminal" onclick="stage1.selectChoice('형사')">
+            <div class="choice-icon">🚨</div>
+            <div class="choice-name">형사 재판 (Criminal)</div>
+            <div class="choice-sub">
+              절도, 폭행 등 법을 어긴 범죄를 심판하고<br>처벌할 때! (검사 vs 피고인)
+            </div>
+          </button>
+        </div>
+
+        <!-- 피드백 박스 -->
+        <div class="feedback-box" id="s1-feedback">
+          <div class="feedback-title" id="s1-feedback-title"></div>
+          <div id="s1-feedback-text" style="font-size: 14px; line-height: 1.6;"></div>
+          <button class="btn-pill btn-pill-primary" style="margin-top: 14px;" id="s1-next-btn" onclick="stage1.nextQuestion()">
+            다음 사건 보러가기 ➔
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== STAGE 2 : 법정의 자리와 역할 퍼즐 ==================== -->
+    <section class="screen" id="screen-stage2">
+      <div class="banner-card" style="padding: 20px 24px;">
+        <span class="step-badge">STAGE 2</span>
+        <h2 style="font-size: 24px; color: var(--primary-dark); margin-bottom: 6px;">법정의 자리를 찾아줘! 🏛️</h2>
+        <p style="font-size: 14px; color: var(--text-muted);">
+          아래의 동물 캐릭터를 먼저 클릭한 뒤, 법정의 알맞은 자리(점선 박스)를 클릭하여 앉혀주세요!
+        </p>
+      </div>
+
+      <!-- 법정 방 레이아웃 -->
+      <div class="court-room-layout">
+        <!-- 1. 판사석 (중앙 상단) -->
+        <div class="court-bench-top">
+          <div class="drop-zone" data-target="judge" onclick="stage2.placeCharacter('judge')">
+            <div class="zone-label">⚖️ 판사석 (가장 높은 자리)</div>
+            <div class="zone-content" id="zone-judge">여기를 클릭하여 배치</div>
+          </div>
+        </div>
+
+        <!-- 2. 중간 줄 (검사석 / 증인석 / 변호인·피고인석) -->
+        <div class="court-middle-row">
+          <!-- 검사석 (국가 공권력) -->
+          <div class="drop-zone" data-target="prosecutor" onclick="stage2.placeCharacter('prosecutor')">
+            <div class="zone-label">📜 검사석 (국가 공소)</div>
+            <div class="zone-content" id="zone-prosecutor">여기를 클릭하여 배치</div>
+          </div>
+
+          <!-- 증인석 (중앙 증언대) -->
+          <div class="court-witness-center">
+            <div class="drop-zone" style="width: 160px; min-height: 110px;" data-target="witness" onclick="stage2.placeCharacter('witness')">
+              <div class="zone-label">🎙️ 증인석 (증언대)</div>
+              <div class="zone-content" id="zone-witness">클릭하여 배치</div>
+            </div>
+          </div>
+
+          <!-- 변호인 & 피고인석 -->
+          <div class="drop-zone" data-target="defense" onclick="stage2.placeCharacter('defense')">
+            <div class="zone-label">🛡️ 피고인 & 변호인석</div>
+            <div class="zone-content" id="zone-defense">여기를 클릭하여 배치</div>
+          </div>
+        </div>
+
+        <!-- 3. 하단 줄 (방청석 & 배심원석) -->
+        <div class="court-bottom-row">
+          <div class="drop-zone" style="width: 320px;" data-target="audience" onclick="stage2.placeCharacter('audience')">
+            <div class="zone-label">👥 방청석 및 국민참여 배심원석</div>
+            <div class="zone-content" id="zone-audience">여기를 클릭하여 배치</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 하단 대기 중인 캐릭터 카드 트레이 -->
+      <div style="margin-bottom: 15px; font-size: 14.5px; font-weight: 700; color: var(--primary);">
+        👇 배치할 등장인물을 먼저 클릭하세요:
+      </div>
+      <div class="char-tray" id="s2-char-tray">
+        <!-- 판사 바니 -->
+        <div class="draggable-char" data-role="judge" onclick="stage2.selectChar('judge')">
+          <div style="font-size: 32px;">🐰⚖️</div>
+          <div class="char-name">토끼 판사 바니</div>
+          <div class="char-role">법과 양심에 따라 공정 판결</div>
+        </div>
+
+        <!-- 검사 폭시 -->
+        <div class="draggable-char" data-role="prosecutor" onclick="stage2.selectChar('prosecutor')">
+          <div style="font-size: 32px;">🦊📜</div>
+          <div class="char-name">여우 검사 폭시</div>
+          <div class="char-role">사회 정의 수호, 범죄 기소</div>
+        </div>
+
+        <!-- 변호인 곰 & 피고인 다람쥐 -->
+        <div class="draggable-char" data-role="defense" onclick="stage2.selectChar('defense')">
+          <div style="font-size: 32px;">🐻🐿️</div>
+          <div class="char-name">변호인 & 피고인</div>
+          <div class="char-role">피고인의 권리를 보호·변호</div>
+        </div>
+
+        <!-- 증인 부엉이 -->
+        <div class="draggable-char" data-role="witness" onclick="stage2.selectChar('witness')">
+          <div style="font-size: 32px;">🦉🎙️</div>
+          <div class="char-name">부엉이 목격자</div>
+          <div class="char-role">보고 들은 진실을 사실대로 증언</div>
+        </div>
+
+        <!-- 방청객 동물 친구들 -->
+        <div class="draggable-char" data-role="audience" onclick="stage2.selectChar('audience')">
+          <div style="font-size: 32px;">🐶🐱</div>
+          <div class="char-name">숲속 방청객들</div>
+          <div class="char-role">공개 재판 참관 & 배심원</div>
+        </div>
+      </div>
+
+      <!-- 완료 후 버튼 -->
+      <div id="s2-complete-area" style="text-align: center; margin-top: 24px; display: none;">
+        <div style="background: #E8F8F5; border: 2px solid #38B2AC; padding: 16px; border-radius: var(--radius-md); margin-bottom: 16px; font-weight: 700; color: #234E52;">
+          🎉 완벽해! 법정의 구조와 모든 참석자의 역할을 정확히 배치했어!
+        </div>
+        <button class="btn-action btn-primary-action" onclick="game.startStage(3)">
+          사건 해결 시뮬레이션으로 가기 ➔
+        </button>
+      </div>
+    </section>
+
+    <!-- ==================== STAGE 3 : 사건 해결 시뮬레이션 ==================== -->
+    <section class="screen" id="screen-stage3">
+      <div class="banner-card" style="padding: 20px 24px;">
+        <span class="step-badge">STAGE 3</span>
+        <h2 style="font-size: 24px; color: var(--primary-dark); margin-bottom: 6px;">황금 딸기 케이크 도난 사건의 진실! 🍰</h2>
+        <p style="font-size: 14px; color: var(--text-muted);">
+          형사 재판의 실제 절차를 밟으며 <strong>증거 재판주의</strong>와 <strong>무죄 추정의 원칙</strong>을 직접 실천해보자!
+        </p>
+      </div>
+
+      <div class="story-card" id="s3-story-box">
+        <div id="s3-step-content"></div>
+      </div>
+    </section>
+
+    <!-- ==================== STAGE 4 : 억울할 땐 어떡하죠? (3심제) ==================== -->
+    <section class="screen" id="screen-stage4">
+      <div class="banner-card" style="padding: 20px 24px;">
+        <span class="step-badge">STAGE 4</span>
+        <h2 style="font-size: 24px; color: var(--primary-dark); margin-bottom: 6px;">억울할 땐 어떡하죠? - 3심제 모험 🪜</h2>
+        <p style="font-size: 14px; color: var(--text-muted);">
+          신중하고 공정한 판결을 위해 한 사건을 세 번 재판받을 수 있는 <strong>3심제(급심제)</strong>를 배워보자!
+        </p>
+      </div>
+
+      <!-- 3심 법원 타워 -->
+      <div class="appeals-court-tower">
+        <!-- 3심: 대법원 -->
+        <div class="court-tier-card tier-3" id="tier-3">
+          <div class="tier-badge" style="color: #DD6B20; border-color: #DD6B20;">3심</div>
+          <div class="tier-info">
+            <div class="tier-name">🏛️ 대법원 (Supreme Court)</div>
+            <div class="tier-desc">
+              우리나라 사법부의 <strong>최고 법원</strong>! 법령의 최종적인 해석을 내리며, 대법원의 판결이 내려지면 최종 확정됩니다.
+            </div>
+          </div>
+          <div id="tier3-status" style="font-size: 13px; font-weight: 700; color: #C05621;">대기 중</div>
+        </div>
+
+        <!-- 2심 -> 3심 연결선 -->
+        <div class="appeal-connector">
+          <span>▲ 2심 판결에 불복할 때:</span>
+          <button class="appeal-action-btn" id="btn-sanggo" onclick="stage4.clickAppeal('상고')">
+            '상고(上告)' 신청하기!
+          </button>
+        </div>
+
+        <!-- 2심: 고등법원 -->
+        <div class="court-tier-card tier-2" id="tier-2">
+          <div class="tier-badge" style="color: #3182CE; border-color: #3182CE;">2심</div>
+          <div class="tier-info">
+            <div class="tier-name">⚖️ 고등법원 (또는 지방법원 본원 합의부)</div>
+            <div class="tier-desc">
+              1심 판결에 억울함이 있거나 사실 판단에 오류가 있을 때 다시 재판을 진행하는 곳입니다.
+            </div>
+          </div>
+          <div id="tier2-status" style="font-size: 13px; font-weight: 700; color: #2B6CB0;">대기 중</div>
+        </div>
+
+        <!-- 1심 -> 2심 연결선 -->
+        <div class="appeal-connector">
+          <span>▲ 1심 판결에 불복할 때:</span>
+          <button class="appeal-action-btn" id="btn-hangso" onclick="stage4.clickAppeal('항소')">
+            '항소(抗訴)' 신청하기!
+          </button>
+        </div>
+
+        <!-- 1심: 지방법원 -->
+        <div class="court-tier-card tier-1" id="tier-1">
+          <div class="tier-badge" style="color: #6B46C1; border-color: #6B46C1;">1심</div>
+          <div class="tier-info">
+            <div class="tier-name">🌱 지방법원 (District Court)</div>
+            <div class="tier-desc">
+              사건이 발생했을 때 가장 먼저 처음으로 재판을 받는 법원입니다. (단독판사 또는 합의부)
+            </div>
+          </div>
+          <div id="tier1-status" style="font-size: 13px; font-weight: 700; color: #6B46C1;">진행 완료 ✅</div>
+        </div>
+      </div>
+
+      <!-- 3심제 퀴즈 인터랙션 -->
+      <div class="story-card" style="margin-top: 20px;">
+        <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--primary-dark);" id="s4-quiz-q">
+          ❓ 질문: 1심 판결을 받아들일 수 없어서 2심 법원에 다시 재판을 청구하는 것을 무엇이라고 부를까요?
+        </h3>
+        <div style="display: flex; gap: 12px; margin-top: 15px; flex-wrap: wrap;" id="s4-quiz-btns">
+          <button class="btn-action btn-pill-primary" onclick="stage4.checkAnswer('항소')">
+            1. 항소 (抗訴)
+          </button>
+          <button class="btn-action btn-pill-secondary" onclick="stage4.checkAnswer('상고')">
+            2. 상고 (上告)
+          </button>
+          <button class="btn-action btn-pill-secondary" onclick="stage4.checkAnswer('기소')">
+            3. 기소 (起訴)
+          </button>
+        </div>
+        <div class="feedback-box" id="s4-feedback" style="display: none; margin-top: 15px;"></div>
+      </div>
+    </section>
+
+    <!-- ==================== STAGE 5 : 골든벨 퀴즈 & 명예 판사 임명장 ==================== -->
+    <section class="screen" id="screen-stage5">
+      <div id="s5-quiz-view">
+        <div class="banner-card" style="padding: 20px 24px;">
+          <span class="step-badge">FINAL STAGE</span>
+          <h2 style="font-size: 24px; color: var(--primary-dark); margin-bottom: 6px;">명예 판사 최종 임명 시험! 🔔</h2>
+          <p style="font-size: 14px; color: var(--text-muted);">
+            중학교 1학년 사회 수업에서 배운 핵심 재판 상식을 총정리하는 5문제 퀴즈입니다!
+          </p>
+        </div>
+
+        <div class="quiz-card">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span class="quiz-num" id="s5-q-num">문제 1 / 5</span>
+            <span style="font-size: 13px; font-weight: 700; color: var(--primary);" id="s5-score">현재 0점</span>
+          </div>
+          <div class="quiz-question" id="s5-q-title"></div>
+          <div class="quiz-options" id="s5-q-options"></div>
+        </div>
+      </div>
+
+      <!-- 최종 결과 및 임명장 화면 -->
+      <div id="s5-cert-view" style="display: none;">
+        <div class="banner-card" style="padding: 20px 24px; margin-bottom: 20px;">
+          <div style="font-size: 42px; margin-bottom: 8px;">🎉 🏆 ⚖️</div>
+          <h2 style="font-size: 26px; color: var(--primary-dark); margin-bottom: 6px;">축하합니다! 모든 재판 모험을 수료했습니다!</h2>
+          <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 16px;">
+            공정하고 지혜로운 판사로서의 자질을 훌륭히 증명하셨습니다.<br>
+            자신의 이름을 입력하여 공식 <strong>명예 판사 임명장</strong>을 발급받으세요!
+          </p>
+
+          <div style="display: flex; justify-content: center; gap: 10px; max-width: 420px; margin: 0 auto 10px;">
+            <input type="text" id="cert-name-input" placeholder="학생 이름을 입력하세요 (예: 김정의)" 
+                   style="padding: 12px 18px; border: 2px solid var(--primary); border-radius: var(--radius-full); font-size: 15px; outline: none; width: 100%; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
+            <button class="btn-action btn-primary-action" style="padding: 12px 24px; font-size: 15px; white-space: nowrap;" onclick="stage5.generateCertificate()">
+              발급 📜
+            </button>
+          </div>
+        </div>
+
+        <!-- 인쇄/다운로드 가능한 임명장 카드 -->
+        <div class="certificate-card" id="certificate-print-area">
+          <div style="font-size: 34px; margin-bottom: 5px;">⚖️</div>
+          <div class="cert-title">명 예 판 사 임 명 장</div>
+          <div class="cert-subtitle">CERTIFICATE OF APPOINTMENT</div>
+
+          <div class="cert-recipient" id="cert-display-name">김 정 의 (학생)</div>
+
+          <div class="cert-body">
+            위 학생은 중학교 1학년 사회과 <strong>[재판과 사법부]</strong> 교육 과정을 성실히 이수하였으며,
+            민사·형사 재판의 구분, 무죄 추정의 원칙, 증거 재판주의 및 3심제에 관한 깊은 이해와 공정한 정의의 가치를 훌륭히 체득하였으므로,
+            본 동물 법정의 <strong>수석 명예 판사</strong>로 정식 임명합니다.
+          </div>
+
+          <div style="display: flex; justify-content: space-around; align-items: center; margin-top: 30px;">
+            <div style="text-align: left; font-size: 13.5px; color: #5D4037; line-height: 1.7;">
+              <p><strong>수여일:</strong> <span id="cert-date">2026년 11월</span></p>
+              <p><strong>발급기관:</strong> 대한민국 동물 법정 교육위원회</p>
+              <p><strong>멘토:</strong> 법원장 토끼 판사 바니</p>
+            </div>
+
+            <div class="cert-seal">
+              <span>동물법정</span>
+              <span style="font-size: 11px;">공식인증</span>
+              <span>⚖️</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 인쇄 및 공유 버튼 -->
+        <div style="display: flex; justify-content: center; gap: 15px; margin-top: 25px;" class="no-print">
+          <button class="btn-action btn-primary-action" onclick="window.print()">
+            🖨️ 임명장 인쇄 / PDF 저장
+          </button>
+          <button class="btn-action btn-pill-secondary" onclick="game.goToStage(0)">
+            🔄 처음부터 다시 도전하기
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 교사용 핵심 요약 모달 ==================== -->
+  <div class="modal-backdrop" id="teacher-modal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="ui.closeModal('teacher-modal')">✕</button>
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+        <span style="font-size: 28px;">📖</span>
+        <h3 style="font-size: 22px; color: var(--primary-dark);">중1 사회 핵심 쏙쏙 요약장 (교사용·학생 복습용)</h3>
+      </div>
+      
+      <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">
+        교실 수업 프로젝터에 띄우거나 수업 마무리 전 핵심 개념을 빠르게 정리할 때 활용하세요.
+      </p>
+
+      <!-- 1. 재판의 종류 비교표 -->
+      <h4 style="color: var(--primary); font-size: 16px; margin-top: 15px;">1. 민사 재판 vs 형사 재판 비교</h4>
+      <table class="summary-table">
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>민사 재판 (Civil)</th>
+            <th>형사 재판 (Criminal)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>목적</strong></td>
+            <td>개인 간의 다툼 해결 및 권리 구제</td>
+            <td>사회 질서를 해친 범죄자 심판 및 처벌</td>
+          </tr>
+          <tr>
+            <td><strong>주요 사건 예시</strong></td>
+            <td>빌려준 돈, 물건 파손 배상, 계약 불이행</td>
+            <td>절도, 사기, 폭행, 살인, 뺑소니 등 범죄</td>
+          </tr>
+          <tr>
+            <td><strong>재판을 청구하는 자</strong></td>
+            <td><strong>원고</strong> (피해를 주장하는 개인)</td>
+            <td><strong>검사</strong> (국가를 대표하여 범죄자를 기소)</td>
+          </tr>
+          <tr>
+            <td><strong>재판을 받는 상대방</strong></td>
+            <td><strong>피고</strong> (다툼의 상대방인 개인)</td>
+            <td><strong>피고인</strong> (범죄 혐의로 기소된 사람)</td>
+          </tr>
+          <tr>
+            <td><strong>조력자</strong></td>
+            <td>변호사 (선임 자유)</td>
+            <td><strong>변호인</strong> (국선변호인 제도 운영)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- 2. 공정한 재판을 위한 원칙과 제도 -->
+      <h4 style="color: var(--primary); font-size: 16px; margin-top: 20px;">2. 공정한 재판을 위한 4대 핵심 원칙 & 제도</h4>
+      <div style="background: #F8FAFC; border: 1.5px solid #E2E8F0; border-radius: var(--radius-md); padding: 16px; font-size: 14px; line-height: 1.8;">
+        <p>⚖️ <strong>사법권의 독립:</strong> 판사는 외부의 간섭이나 정치적 압력을 받지 않고, 오직 <strong>헌법과 법률, 양심</strong>에 따라 독립하여 심판합니다.</p>
+        <p>🛡️ <strong>무죄 추정의 원칙:</strong> 피고인은 법원에서 유죄 판결이 확정될 때까지는 <strong>무죄인 것으로 추정</strong>하여 인권을 보호합니다.</p>
+        <p>🔍 <strong>증거 재판주의:</strong> 사실의 인정은 반드시 법률에 적합한 <strong>합법적인 증거</strong>에 의해서만 판단해야 합니다. (의심만으로 처벌 불가)</p>
+        <p>🪜 <strong>3심제 (급심제):</strong> 한 사건에 대해 <strong>세 번(지방법원 ➔ 고등법원 ➔ 대법원)</strong> 재판을 받을 수 있게 하여 판결의 신중함과 국민의 기본권을 지킵니다.</p>
+      </div>
+
+      <!-- 3. 심급 제도 용어 정리 -->
+      <h4 style="color: var(--primary); font-size: 16px; margin-top: 20px;">3. 3심제 용어 확실하게 외우기!</h4>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px;">
+        <div style="background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: var(--radius-sm); padding: 12px;">
+          <strong style="color: #1E40AF;">항소 (抗訴)</strong>
+          <p style="font-size: 13px; color: #1E3A8A; margin-top: 4px;">1심 판결에 불복하여 2심 법원에 다시 재판을 청구하는 것</p>
+        </div>
+        <div style="background: #FFF7ED; border: 1px solid #FED7AA; border-radius: var(--radius-sm); padding: 12px;">
+          <strong style="color: #9A3412;">상고 (上告)</strong>
+          <p style="font-size: 13px; color: #7C2D12; margin-top: 4px;">2심 판결에 불복하여 3심(대법원)에 재판을 청구하는 것</p>
+        </div>
+      </div>
+
+      <div style="text-align: right; margin-top: 24px;">
+        <button class="btn-action btn-pill-primary" onclick="ui.closeModal('teacher-modal')">
+          확인하고 게임 계속하기!
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 토스트 알림 메시지 엘리먼트 -->
+  <div id="toast"></div>
+
+  <!-- ==================== 자바스크립트 게임 로직 및 Web Audio 사운드 ==================== -->
+  <script>
+    /* ==========================================================
+       1. Web Audio API 사운드 엔진 (외부 파일 다운로드 없이 100% 자체 합성)
+       ========================================================== */
+    class SoundEngine {
+      constructor() {
+        this.ctx = null;
+        this.enabled = true;
+      }
+
+      initContext() {
+        if (!this.ctx) {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          if (AudioContext) {
+            this.ctx = new AudioContext();
+          }
+        }
+        if (this.ctx && this.ctx.state === 'suspended') {
+          this.ctx.resume();
+        }
+      }
+
+      toggleSound() {
+        this.enabled = !this.enabled;
+        const btn = document.getElementById('btn-sound');
+        if (btn) {
+          btn.innerText = this.enabled ? '🔊' : '🔇';
+        }
+        ui.showToast(this.enabled ? '사운드가 켜졌습니다 🔊' : '사운드가 꺼졌습니다 🔇');
+      }
+
+      playSuccess() {
+        if (!this.enabled) return;
+        this.initContext();
+        if (!this.ctx) return;
+
+        const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+        notes.forEach((freq, idx) => {
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.value = freq;
+
+          const startTime = this.ctx.currentTime + (idx * 0.08);
+          gain.gain.setValueAtTime(0.18, startTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.25);
+
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          osc.start(startTime);
+          osc.stop(startTime + 0.25);
+        });
+      }
+
+      playWrong() {
+        if (!this.enabled) return;
+        this.initContext();
+        if (!this.ctx) return;
+
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(220, this.ctx.currentTime);
+        osc.frequency.linearRampToValueAtTime(150, this.ctx.currentTime + 0.3);
+
+        gain.gain.setValueAtTime(0.2, this.ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, this.ctx.currentTime + 0.3);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start();
+        osc.stop(this.ctx.currentTime + 0.3);
+      }
+
+      playGavel() {
+        if (!this.enabled) return;
+        this.initContext();
+        if (!this.ctx) return;
+
+        // 베이스 울림
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(160, this.ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(40, this.ctx.currentTime + 0.35);
+
+        gain.gain.setValueAtTime(0.65, this.ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.35);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start();
+        osc.stop(this.ctx.currentTime + 0.35);
+
+        // 딱! 나무 타격음
+        const clickOsc = this.ctx.createOscillator();
+        const clickGain = this.ctx.createGain();
+        clickOsc.type = 'square';
+        clickOsc.frequency.setValueAtTime(800, this.ctx.currentTime);
+        clickOsc.frequency.exponentialRampToValueAtTime(200, this.ctx.currentTime + 0.05);
+
+        clickGain.gain.setValueAtTime(0.3, this.ctx.currentTime);
+        clickGain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.05);
+
+        clickOsc.connect(clickGain);
+        clickGain.connect(this.ctx.destination);
+        clickOsc.start();
+        clickOsc.stop(this.ctx.currentTime + 0.05);
+      }
+
+      playFanfare() {
+        if (!this.enabled) return;
+        this.initContext();
+        if (!this.ctx) return;
+
+        const melody = [
+          { freq: 523.25, time: 0 },
+          { freq: 523.25, time: 0.12 },
+          { freq: 523.25, time: 0.24 },
+          { freq: 659.25, time: 0.36 },
+          { freq: 783.99, time: 0.48 },
+          { freq: 1046.50, time: 0.65 }
+        ];
+
+        melody.forEach(note => {
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.value = note.freq;
+
+          const start = this.ctx.currentTime + note.time;
+          gain.gain.setValueAtTime(0.25, start);
+          gain.gain.exponentialRampToValueAtTime(0.001, start + 0.35);
+
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          osc.start(start);
+          osc.stop(start + 0.35);
+        });
+      }
+
+      playClick() {
+        if (!this.enabled) return;
+        this.initContext();
+        if (!this.ctx) return;
+
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(600, this.ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(400, this.ctx.currentTime + 0.05);
+
+        gain.gain.setValueAtTime(0.12, this.ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.05);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start();
+        osc.stop(this.ctx.currentTime + 0.05);
+      }
+    }
+
+    const audioManager = new SoundEngine();
+
+    /* ==========================================================
+       2. UI 헬퍼 모듈
+       ========================================================== */
+    const ui = {
+      showToast(msg) {
+        const toast = document.getElementById('toast');
+        if (!toast) return;
+        toast.innerText = msg;
+        toast.classList.add('show');
+        clearTimeout(this.toastTimeout);
+        this.toastTimeout = setTimeout(() => {
+          toast.classList.remove('show');
+        }, 2500);
+      },
+
+      openModal(id) {
+        audioManager.playClick();
+        const modal = document.getElementById(id);
+        if (modal) modal.classList.add('active');
+      },
+
+      closeModal(id) {
+        audioManager.playClick();
+        const modal = document.getElementById(id);
+        if (modal) modal.classList.remove('active');
+      },
+
+      toggleFullScreen() {
+        audioManager.playClick();
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen().catch(err => {
+            console.log(err);
+          });
+          this.showToast('전체화면 모드로 전환되었습니다.');
+        } else {
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          }
+          this.showToast('전체화면 모드를 종료했습니다.');
+        }
+      }
+    };
+
+    /* ==========================================================
+       3. 메인 게임 컨트롤러
+       ========================================================== */
+    const game = {
+      currentStage: 0,
+      completedStages: new Set(),
+
+      goToStage(stageNum) {
+        audioManager.playClick();
+        this.currentStage = stageNum;
+
+        // 모든 스크린 숨기기
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+
+        // 해당 스크린 활성화
+        const targetScreen = document.getElementById(`screen-stage${stageNum}`);
+        if (targetScreen) targetScreen.classList.add('active');
+
+        // 상단 트래커 업데이트
+        document.querySelectorAll('.stage-step').forEach(step => {
+          const s = parseInt(step.getAttribute('data-stage'));
+          step.classList.remove('active');
+          if (s === stageNum) {
+            step.classList.add('active');
+          }
+          if (this.completedStages.has(s)) {
+            step.classList.add('completed');
+          }
+        });
+
+        // 각 스테이지 초기화 진입
+        if (stageNum === 1) stage1.init();
+        if (stageNum === 2) stage2.init();
+        if (stageNum === 3) stage3.init();
+        if (stageNum === 4) stage4.init();
+        if (stageNum === 5) stage5.init();
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      },
+
+      startStage(stageNum) {
+        this.goToStage(stageNum);
+      },
+
+      completeStage(stageNum) {
+        this.completedStages.add(stageNum);
+        audioManager.playFanfare();
+        ui.showToast(`🎉 STAGE ${stageNum} 클리어 완료!`);
+
+        document.querySelectorAll('.stage-step').forEach(step => {
+          const s = parseInt(step.getAttribute('data-stage'));
+          if (this.completedStages.has(s)) {
+            step.classList.add('completed');
+          }
+        });
+      }
+    };
+
+    /* ==========================================================
+       4. STAGE 1 : 민사 vs 형사 재판 분류 챌린지
+       ========================================================== */
+    const stage1 = {
+      cases: [
+        {
+          id: 1,
+          story: "토리 다람쥐가 꿀벌 친구에게 겨울 양식인 도토리를 빌렸는데, 약속한 날짜가 훨씬 지나도 갚지 않아서 다툼이 벌어졌어요!",
+          hint: "개인과 개인 사이의 금전(재산)이나 계약 불이행에 관한 권리 다툼이에요.",
+          answer: "민사",
+          explanation: "개인 간의 돈이나 물건 거래, 계약 불이행 등의 다툼은 '민사 재판'으로 해결합니다. (피해를 입은 원고가 법원에 소송을 냅니다)"
+        },
+        {
+          id: 2,
+          story: "밤중에 늑대가 평화로운 숲속 베이커리 유리창을 망치로 부수고 금고 속 현금을 훔쳐 달아났어요!",
+          hint: "사회 전체의 질서를 어지럽히고 법률에 규정된 중대한 '절도 범죄'예요.",
+          answer: "형사",
+          explanation: "절도, 폭행, 사기 등 사회 질서를 해친 범죄를 처벌하기 위한 재판은 '형사 재판'입니다. (국가를 대표하는 검사가 피고인을 기소합니다)"
+        },
+        {
+          id: 3,
+          story: "강아지가 이웃집 꽃밭에 뛰어들어 정성껏 가꾼 튤립 꽃밭을 모두 망쳐놓았어요. 꽃밭 주인 고양이가 수리비와 손해배상을 요구하고 있어요!",
+          hint: "사적으로 발생한 손해에 대해 배상금을 청구하는 분쟁이에요.",
+          answer: "민사",
+          explanation: "개인 간의 고의나 과실로 발생한 피해에 대해 '손해배상'을 청구하는 분쟁은 '민사 재판'에 해당합니다."
+        },
+        {
+          id: 4,
+          story: "멧돼지가 신호등의 빨간 불을 무시하고 과속으로 운전하다가 길을 건너던 토끼를 치고 그냥 도망쳐버렸어요(뺑소니)!",
+          hint: "사람의 신체에 해를 입히고 도주한 것은 법으로 금지된 심각한 범죄예요.",
+          answer: "형사",
+          explanation: "교통사고 뺑소니 및 인명 피해는 형법과 특정범죄 가중처벌법을 위반한 심각한 범죄로, '형사 재판'을 통해 징역이나 벌금 등의 형벌을 받게 됩니다."
+        },
+        {
+          id: 5,
+          story: "친구의 귀중한 스마트폰을 몰래 훔쳐서 인터넷 중고 장터에 팔아버리고 모른 척 발뺌하고 있어요!",
+          hint: "타인의 재물을 절취하여 판매한 절도 및 사기 행위예요.",
+          answer: "형사",
+          explanation: "남의 물건을 훔치는 절도죄는 법을 위반한 범죄이므로 국가가 처벌하는 '형사 재판' 대상입니다."
+        }
+      ],
+      currentIndex: 0,
+      score: 0,
+
+      init() {
+        this.currentIndex = 0;
+        this.score = 0;
+        this.loadQuestion();
+      },
+
+      loadQuestion() {
+        const item = this.cases[this.currentIndex];
+        document.getElementById('s1-progress-num').innerText = (this.currentIndex + 1);
+        document.getElementById('s1-score-display').innerText = `정답: ${this.score}개`;
+        document.getElementById('s1-case-tag').innerText = `사건 파일 #${item.id}`;
+        document.getElementById('s1-case-text').innerText = `"${item.story}"`;
+        document.getElementById('s1-case-hint').innerHTML = `💡 <strong>판사의 힌트:</strong> ${item.hint}`;
+
+        const fb = document.getElementById('s1-feedback');
+        fb.style.display = 'none';
+        fb.className = 'feedback-box';
+      },
+
+      selectChoice(choice) {
+        const item = this.cases[this.currentIndex];
+        const isCorrect = (choice === item.answer);
+
+        const fb = document.getElementById('s1-feedback');
+        const fbTitle = document.getElementById('s1-feedback-title');
+        const fbText = document.getElementById('s1-feedback-text');
+        const nextBtn = document.getElementById('s1-next-btn');
+
+        fb.style.display = 'block';
+
+        if (isCorrect) {
+          audioManager.playSuccess();
+          this.score++;
+          document.getElementById('s1-score-display').innerText = `정답: ${this.score}개`;
+          fb.className = 'feedback-box correct';
+          fbTitle.innerHTML = '🎉 <strong>정답입니다! 공정한 판단이에요!</strong>';
+        } else {
+          audioManager.playWrong();
+          fb.className = 'feedback-box wrong';
+          fbTitle.innerHTML = '앗, 아쉬워요! 다시 한번 생각해볼까요?';
+        }
+
+        fbText.innerHTML = `
+          <strong>정답: [${item.answer} 재판]</strong><br>
+          ${item.explanation}
+        `;
+
+        if (this.currentIndex === this.cases.length - 1) {
+          nextBtn.innerText = 'STAGE 1 완료! ➔ 2단계로 이동하기';
+        } else {
+          nextBtn.innerText = '다음 사건 의뢰서 확인하기 ➔';
+        }
+      },
+
+      nextQuestion() {
+        audioManager.playClick();
+        if (this.currentIndex < this.cases.length - 1) {
+          this.currentIndex++;
+          this.loadQuestion();
+        } else {
+          game.completeStage(1);
+          game.goToStage(2);
+        }
+      }
+    };
+
+    /* ==========================================================
+       5. STAGE 2 : 법정 좌석 배치 퍼즐
+       ========================================================== */
+    const stage2 = {
+      selectedCharRole: null,
+      placedMap: {},
+      totalZones: 5,
+
+      init() {
+        this.selectedCharRole = null;
+        this.placedMap = {};
+        this.render();
+      },
+
+      render() {
+        const zones = ['judge', 'prosecutor', 'defense', 'witness', 'audience'];
+        zones.forEach(z => {
+          const el = document.getElementById(`zone-${z}`);
+          const zoneBox = el.closest('.drop-zone');
+          zoneBox.classList.remove('filled', 'zone-highlight');
+          if (this.placedMap[z]) {
+            zoneBox.classList.add('filled');
+            el.innerHTML = `<span style="font-size:26px;">${this.placedMap[z].icon}</span><br><strong style="color:#2D3748;">${this.placedMap[z].name}</strong>`;
+          } else {
+            el.innerHTML = '<span style="color:#A0AEC0; font-size:12px;">여기를 클릭하여 배치</span>';
+          }
+        });
+
+        document.querySelectorAll('.draggable-char').forEach(card => {
+          const role = card.getAttribute('data-role');
+          card.classList.remove('selected', 'placed');
+          if (this.selectedCharRole === role) {
+            card.classList.add('selected');
+          }
+          if (Object.values(this.placedMap).some(p => p.role === role)) {
+            card.classList.add('placed');
+          }
+        });
+
+        const completeArea = document.getElementById('s2-complete-area');
+        if (Object.keys(this.placedMap).length === this.totalZones) {
+          completeArea.style.display = 'block';
+          game.completeStage(2);
+        } else {
+          completeArea.style.display = 'none';
+        }
+      },
+
+      selectChar(role) {
+        audioManager.playClick();
+        if (Object.values(this.placedMap).some(p => p.role === role)) {
+          ui.showToast('이미 법정에 배치된 등장인물입니다.');
+          return;
+        }
+        this.selectedCharRole = role;
+        this.render();
+        ui.showToast('배치할 법정의 자리를 클릭해주세요!');
+      },
+
+      placeCharacter(zoneTarget) {
+        if (!this.selectedCharRole) {
+          ui.showToast('먼저 아래에서 배치할 캐릭터를 선택해주세요!');
+          return;
+        }
+
+        const roleData = {
+          judge: { name: '판사 바니', icon: '🐰⚖️', role: 'judge' },
+          prosecutor: { name: '검사 폭시', icon: '🦊📜', role: 'prosecutor' },
+          defense: { name: '피고인 & 변호인', icon: '🐻🐿️', role: 'defense' },
+          witness: { name: '부엉이 목격자', icon: '🦉🎙️', role: 'witness' },
+          audience: { name: '방청객 & 배심원', icon: '🐶🐱', role: 'audience' }
+        };
+
+        if (this.selectedCharRole === zoneTarget) {
+          audioManager.playSuccess();
+          this.placedMap[zoneTarget] = roleData[this.selectedCharRole];
+          this.selectedCharRole = null;
+          this.render();
+          ui.showToast('정답입니다! 정확한 자리에 배치되었습니다.');
+        } else {
+          audioManager.playWrong();
+          ui.showToast('해당 캐릭터의 자리가 아니에요. 역할을 다시 생각해보세요!');
+        }
+      }
+    };
+
+    /* ==========================================================
+       6. STAGE 3 : 사건 해결 시뮬레이션 (형사재판 절차)
+       ========================================================== */
+    const stage3 = {
+      step: 1,
+      gavelHits: 0,
+      inspectedCount: 0,
+
+      init() {
+        this.step = 1;
+        this.gavelHits = 0;
+        this.inspectedCount = 0;
+        this.renderStep();
+      },
+
+      renderStep() {
+        const container = document.getElementById('s3-step-content');
+        if (!container) return;
+
+        if (this.step === 1) {
+          container.innerHTML = `
+            <div style="text-align:center; margin-bottom: 20px;">
+              <div style="font-size: 52px; margin-bottom: 8px;">🍰 🔍 🦊</div>
+              <h3 style="font-size: 21px; color: var(--primary-dark); margin: 10px 0;">
+                제 1단계: 수사와 공소 제기 (기소)
+              </h3>
+              <p style="font-size: 14.5px; color: var(--text-muted); line-height: 1.65; max-width: 650px; margin: 0 auto;">
+                평화로운 파스텔 숲속의 명물 베이커리에서 <strong>'황금 딸기 케이크'</strong>가 감쪽같이 사라졌습니다!<br>
+                여우 검사는 현장 바닥에서 도토리 부스러기를 발견하고, 평소 도토리를 좋아하는 <strong>'아기 다람쥐 토리'</strong>를 피고인으로 지목하여 법원에 재판을 청구(기소)했습니다.
+              </p>
+            </div>
+
+            <div style="background: #FFF9E6; border-left: 4px solid #F59E0B; padding: 15px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin-bottom: 20px; font-size: 14px;">
+              ⚖️ <strong>핵심 학습:</strong> 형사재판에서 경찰과 검사가 범죄를 수사한 후, 죄가 있다고 판단하여 법원에 재판을 청구하는 행위를 <strong>'기소(공소 제기)'</strong>라고 합니다.
+            </div>
+
+            <div style="text-align: center;">
+              <button class="btn-action btn-primary-action" onclick="stage3.goStep(2)">
+                재판 시작하기 (공판 개정) ➔
+              </button>
+            </div>
+          `;
+        } else if (this.step === 2) {
+          container.innerHTML = `
+            <div style="text-align:center; margin-bottom: 20px;">
+              <div style="font-size: 52px; margin-bottom: 8px;">🐰 ⚖️ 🐿️</div>
+              <h3 style="font-size: 21px; color: var(--primary-dark); margin: 10px 0;">
+                제 2단계: 공판 개정과 판사의 기본 원칙
+              </h3>
+              <p style="font-size: 14.5px; color: var(--text-muted); line-height: 1.65; max-width: 600px; margin: 0 auto;">
+                판사 바니가 법정에 들어섰습니다. 피고인 다람쥐 토리는 벌벌 떨며 억울하다고 눈물을 글썽이고 있습니다.<br>
+                재판을 시작하기 전, 판사가 가슴에 새겨야 할 <strong>가장 중요한 헌법상 원칙</strong>은 무엇일까요?
+              </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; max-width: 600px; margin: 20px auto;">
+              <button class="btn-court-choice" onclick="stage3.answerPrinciple(true)" style="border: 2px solid #CBD5E0;">
+                <div style="font-size: 34px;">🛡️</div>
+                <div style="font-family:'Jua'; font-size:18px;">무죄 추정의 원칙</div>
+                <div style="font-size: 12.5px; color: var(--text-muted);">
+                  유죄 판결이 확정될 때까지는<br>피고인을 무죄로 추정한다.
+                </div>
+              </button>
+
+              <button class="btn-court-choice" onclick="stage3.answerPrinciple(false)" style="border: 2px solid #CBD5E0;">
+                <div style="font-size: 34px;">⚠️</div>
+                <div style="font-family:'Jua'; font-size:18px;">유죄 우선주의</div>
+                <div style="font-size: 12.5px; color: var(--text-muted);">
+                  의심받아 재판에 넘겨졌으니<br>일단 범인으로 취급한다.
+                </div>
+              </button>
+            </div>
+            <div id="s3-step2-feedback"></div>
+          `;
+        } else if (this.step === 3) {
+          container.innerHTML = `
+            <div style="text-align:center; margin-bottom: 15px;">
+              <div style="font-size: 42px;">🔍 📁 🔎</div>
+              <h3 style="font-size: 21px; color: var(--primary-dark); margin: 6px 0;">
+                제 3단계: 증거 조사 (증거 재판주의)
+              </h3>
+              <p style="font-size: 14px; color: var(--text-muted);">
+                법정에서는 심증이나 의심만으로 판결할 수 없습니다. 3가지 증거를 모두 클릭하여 면밀히 조사하세요!
+              </p>
+            </div>
+
+            <div class="evidence-grid">
+              <div class="evidence-item" id="ev-1" onclick="stage3.inspectEvidence(1)">
+                <div class="evidence-icon">🐾</div>
+                <div class="evidence-title">증거 1: 현장 발자국</div>
+                <div class="evidence-desc" id="ev-desc-1">클릭하여 돋보기로 관찰하기</div>
+              </div>
+
+              <div class="evidence-item" id="ev-2" onclick="stage3.inspectEvidence(2)">
+                <div class="evidence-icon">📹</div>
+                <div class="evidence-title">증거 2: 빵집 CCTV</div>
+                <div class="evidence-desc" id="ev-desc-2">클릭하여 영상 재생하기</div>
+              </div>
+
+              <div class="evidence-item" id="ev-3" onclick="stage3.inspectEvidence(3)">
+                <div class="evidence-icon">🦉</div>
+                <div class="evidence-title">증거 3: 부엉이의 증언</div>
+                <div class="evidence-desc" id="ev-desc-3">클릭하여 목격 진술 듣기</div>
+              </div>
+            </div>
+
+            <div id="s3-evidence-all-done" style="display: none; text-align: center; margin-top: 15px;">
+              <div style="background: #E8F8F5; border: 2px solid #48BB78; padding: 16px; border-radius: var(--radius-md); margin-bottom: 16px; font-size: 14.5px; color: #22543D; line-height: 1.6;">
+                ✨ <strong>결정적 발견!</strong> 다람쥐의 발자국이 아니라 <strong>'새의 날개 깃털 흔적'</strong>이었고, 밤하늘로 케이크를 들고 날아간 까마귀가 CCTV에 포착되었습니다!
+              </div>
+              <button class="btn-action btn-primary-action" onclick="stage3.goStep(4)">
+                최종 판결 선고하기 ➔
+              </button>
+            </div>
+          `;
+        } else if (this.step === 4) {
+          container.innerHTML = `
+            <div style="text-align:center;">
+              <div style="font-size: 42px;">⚖️ 🔨 ✨</div>
+              <h3 style="font-size: 23px; color: var(--primary-dark); margin: 8px 0;">
+                제 4단계: 판결 선고 (판사 바니의 판결)
+              </h3>
+              <p style="font-size: 15px; color: var(--text-muted); max-width: 650px; margin: 0 auto 15px;">
+                검사와 변호인의 최종 진술이 끝났습니다. 증거에 따라 피고인 다람쥐에게 판결을 내릴 시간입니다.<br>
+                법봉 버튼을 <strong>3번</strong> 힘차게 내리쳐 판결을 확정하세요!
+              </p>
+            </div>
+
+            <div class="gavel-action-area">
+              <div class="gavel-hit-count" id="gavel-count-text">남은 법봉 타격: 3회</div>
+              <button class="gavel-btn" onclick="stage3.hitGavel()">
+                <span style="font-size: 34px;">🔨</span>
+                <span style="font-size: 12px; font-weight:700;">땅! 땅! 땅!</span>
+              </button>
+              <div style="font-size: 13px; color: var(--court-wood-dark);">버튼을 클릭하여 법봉을 내리치세요!</div>
+            </div>
+
+            <div id="s3-verdict-result" style="display: none; text-align: center; animation: screenFadeIn 0.4s;">
+              <div style="background: #FFFFFF; border: 3px solid var(--primary); border-radius: var(--radius-md); padding: 24px; box-shadow: var(--card-shadow); margin-bottom: 20px;">
+                <h4 style="font-size: 22px; color: var(--primary-dark); margin-bottom: 10px;">
+                  "주문(主文): 피고인 아기 다람쥐 토리는 무죄(無罪)를 선고한다!"
+                </h4>
+                <p style="font-size: 14.5px; color: var(--text-main); line-height: 1.65;">
+                  이유: 공소사실에 대한 엄격한 증거 조사를 실시한 결과, 범행 현장의 흔적은 조류의 깃털이며 CCTV에 나타난 진범은 까마귀임이 밝혀졌습니다.
+                  이에 <strong>증거 재판주의</strong>에 의거하여 피고인에게 무죄를 선고합니다!
+                </p>
+              </div>
+
+              <button class="btn-action btn-primary-action" onclick="stage3.finishStage()">
+                STAGE 3 완료! ➔ 4단계 (3심제 모험)로 이동
+              </button>
+            </div>
+          `;
+        }
+      },
+
+      goStep(stepNum) {
+        audioManager.playClick();
+        this.step = stepNum;
+        this.renderStep();
+      },
+
+      answerPrinciple(isCorrect) {
+        const fb = document.getElementById('s3-step2-feedback');
+        if (isCorrect) {
+          audioManager.playSuccess();
+          fb.innerHTML = `
+            <div style="background: #DEF7EC; border: 2px solid #31C48D; padding: 16px; border-radius: var(--radius-md); margin-top: 15px; text-align: center; color: #03543F;">
+              <strong>🎉 훌륭합니다! 헌법 제27조 무죄 추정의 원칙!</strong><br>
+              수사나 재판을 받는 피고인은 유죄 판결이 내려지기 전까지 무죄로 존중받아야 합니다.
+              <br><br>
+              <button class="btn-pill btn-pill-primary" onclick="stage3.goStep(3)">증거 조사 단계로 이동 ➔</button>
+            </div>
+          `;
+        } else {
+          audioManager.playWrong();
+          fb.innerHTML = `
+            <div style="background: #FDE8E8; border: 2px solid #F98080; padding: 16px; border-radius: var(--radius-md); margin-top: 15px; text-align: center; color: #9B1C1C;">
+              앗! 억울한 피해자가 생기지 않도록 우리 법은 판결 전까지 '무죄 추정의 원칙'을 가장 중요시해요! 다시 선택해보세요.
+            </div>
+          `;
+        }
+      },
+
+      inspectEvidence(id) {
+        audioManager.playClick();
+        const item = document.getElementById(`ev-${id}`);
+        const desc = document.getElementById(`ev-desc-${id}`);
+        if (!item.classList.contains('inspected')) {
+          item.classList.add('inspected');
+          this.inspectedCount++;
+
+          if (id === 1) {
+            desc.innerHTML = '<span style="color:#2B6CB0; font-weight:700;">🔍 확대 결과: 다람쥐 발이 아니라 날개 깃털 흔적 발견!</span>';
+          } else if (id === 2) {
+            desc.innerHTML = '<span style="color:#2B6CB0; font-weight:700;">📹 재생 결과: 다람쥐는 빵을 사러 왔을 뿐이며 진범은 검은 날개!</span>';
+          } else if (id === 3) {
+            desc.innerHTML = '<span style="color:#2B6CB0; font-weight:700;">🦉 증언 청취: "하늘에서 까마귀가 상자를 물고 날아가는 걸 봤어요!"</span>';
+          }
+
+          if (this.inspectedCount >= 3) {
+            audioManager.playSuccess();
+            document.getElementById('s3-evidence-all-done').style.display = 'block';
+          }
+        }
+      },
+
+      hitGavel() {
+        audioManager.playGavel();
+        this.gavelHits++;
+        const remaining = 3 - this.gavelHits;
+        const textEl = document.getElementById('gavel-count-text');
+
+        if (remaining > 0) {
+          textEl.innerText = `남은 법봉 타격: ${remaining}회! (땅!)`;
+        } else {
+          textEl.innerText = `판결 선고 완료! (땅! 땅! 땅!)`;
+          document.querySelector('.gavel-btn').style.pointerEvents = 'none';
+          document.querySelector('.gavel-btn').style.opacity = '0.7';
+          document.getElementById('s3-verdict-result').style.display = 'block';
+          audioManager.playSuccess();
+        }
+      },
+
+      finishStage() {
+        game.completeStage(3);
+        game.goToStage(4);
+      }
+    };
+
+    /* ==========================================================
+       7. STAGE 4 : 3심제 모험 (지방법원 -> 고등법원 -> 대법원)
+       ========================================================= */
+    const stage4 = {
+      currentLevel: 1,
+
+      init() {
+        this.currentLevel = 1;
+        this.updateTowerUI();
+        this.resetQuiz();
+      },
+
+      updateTowerUI() {
+        const t1 = document.getElementById('tier1-status');
+        const t2 = document.getElementById('tier2-status');
+        const t3 = document.getElementById('tier3-status');
+
+        if (this.currentLevel === 1) {
+          t1.innerHTML = '1심 판결 선고 ⚖️';
+          t2.innerHTML = '불복 시 항소 대기';
+          t3.innerHTML = '상고 대기';
+        } else if (this.currentLevel === 2) {
+          t1.innerHTML = '항소 완료 ✅';
+          t2.innerHTML = '2심 심리 진행 중 ⚖️';
+          t3.innerHTML = '불복 시 상고 대기';
+        } else if (this.currentLevel === 3) {
+          t1.innerHTML = '완료 ✅';
+          t2.innerHTML = '상고 완료 ✅';
+          t3.innerHTML = '대법원 최종 판결 확정 🏆';
+        }
+      },
+
+      resetQuiz() {
+        const qTitle = document.getElementById('s4-quiz-q');
+        const btns = document.getElementById('s4-quiz-btns');
+
+        qTitle.innerText = "❓ 질문 1: 1심 법원(지방법원)의 판결에 불복하여 2심 법원(고등법원)에 다시 재판을 청구하는 것을 무엇이라고 할까요?";
+        btns.innerHTML = `
+          <button class="btn-action btn-pill-primary" onclick="stage4.checkAnswer('항소')">
+            1. 항소 (抗訴)
+          </button>
+          <button class="btn-action btn-pill-secondary" onclick="stage4.checkAnswer('상고')">
+            2. 상고 (上告)
+          </button>
+          <button class="btn-action btn-pill-secondary" onclick="stage4.checkAnswer('기소')">
+            3. 기소 (起訴)
+          </button>
+        `;
+        document.getElementById('s4-feedback').style.display = 'none';
+      },
+
+      clickAppeal(type) {
+        if (type === '항소') {
+          if (this.currentLevel === 1) {
+            audioManager.playSuccess();
+            this.currentLevel = 2;
+            this.updateTowerUI();
+            ui.showToast('1심 판결에 불복하여 2심 법원으로 [항소]했습니다!');
+            this.showQuestion2();
+          } else {
+            ui.showToast('이미 1심에서 항소했습니다.');
+          }
+        } else if (type === '상고') {
+          if (this.currentLevel === 2) {
+            audioManager.playSuccess();
+            this.currentLevel = 3;
+            this.updateTowerUI();
+            ui.showToast('2심 판결에 불복하여 최고법원인 대법원으로 [상고]했습니다!');
+            this.showQuestion3();
+          } else if (this.currentLevel === 1) {
+            ui.showToast('먼저 1심에서 2심으로 [항소]를 거쳐야 합니다!');
+          } else {
+            ui.showToast('이미 대법원에 상고되었습니다.');
+          }
+        }
+      },
+
+      checkAnswer(choice) {
+        const fb = document.getElementById('s4-feedback');
+        fb.style.display = 'block';
+
+        if (choice === '항소') {
+          audioManager.playSuccess();
+          fb.className = 'feedback-box correct';
+          fb.innerHTML = `
+            🎉 <strong>정답입니다!</strong><br>
+            1심 판결에 승복할 수 없을 때 2심 법원에 청구하는 것은 <strong>'항소'</strong>입니다!<br>
+            사다리 타워의 <strong>['항소(抗訴)' 신청하기]</strong> 버튼을 누르거나 아래 버튼을 눌러 2심으로 올라가세요!
+            <br><br>
+            <button class="btn-pill btn-pill-primary" onclick="stage4.clickAppeal('항소')">2심(고등법원)으로 이동 ➔</button>
+          `;
+        } else {
+          audioManager.playWrong();
+          fb.className = 'feedback-box wrong';
+          fb.innerHTML = `
+            앗, 틀렸습니다! 1심 ➔ 2심은 <strong>'항소'</strong>, 2심 ➔ 3심은 <strong>'상고'</strong>입니다. 다시 선택해보세요!
+          `;
+        }
+      },
+
+      showQuestion2() {
+        const qTitle = document.getElementById('s4-quiz-q');
+        const btns = document.getElementById('s4-quiz-btns');
+        const fb = document.getElementById('s4-feedback');
+        fb.style.display = 'none';
+
+        qTitle.innerText = "❓ 질문 2: 2심 법원 판결에도 불복하여 우리나라 최고 법원인 '대법원'에 재판을 청구하는 것은?";
+        btns.innerHTML = `
+          <button class="btn-action btn-pill-secondary" onclick="stage4.checkAnswer2('항소')">
+            1. 항소 (抗訴)
+          </button>
+          <button class="btn-action btn-pill-primary" onclick="stage4.checkAnswer2('상고')">
+            2. 상고 (上告)
+          </button>
+          <button class="btn-action btn-pill-secondary" onclick="stage4.checkAnswer2('탄핵')">
+            3. 탄핵 (彈劾)
+          </button>
+        `;
+      },
+
+      checkAnswer2(choice) {
+        const fb = document.getElementById('s4-feedback');
+        fb.style.display = 'block';
+
+        if (choice === '상고') {
+          audioManager.playSuccess();
+          fb.className = 'feedback-box correct';
+          fb.innerHTML = `
+            🎉 <strong>정답입니다!</strong><br>
+            2심 판결에 불복하여 대법원에 올라가는 것은 <strong>'상고(上告)'</strong>입니다!<br>
+            타워의 <strong>['상고(上告)' 신청하기]</strong> 버튼을 누르거나 아래 버튼을 눌러 대법원으로 진입하세요!
+            <br><br>
+            <button class="btn-pill btn-pill-primary" onclick="stage4.clickAppeal('상고')">대법원으로 이동 ➔</button>
+          `;
+        } else {
+          audioManager.playWrong();
+          fb.className = 'feedback-box wrong';
+          fb.innerHTML = `앗, 아쉬워요! 2심에서 최고 법원인 대법원으로 올리는 것은 <strong>'상고'</strong>입니다.`;
+        }
+      },
+
+      showQuestion3() {
+        const qTitle = document.getElementById('s4-quiz-q');
+        const btns = document.getElementById('s4-quiz-btns');
+        const fb = document.getElementById('s4-feedback');
+        fb.style.display = 'none';
+
+        qTitle.innerText = "❓ 질문 3: 우리나라가 한 사건에 대해 원칙적으로 '3번' 재판을 받을 수 있는 3심제를 두는 가장 근본적인 이유는 무엇일까요?";
+        btns.innerHTML = `
+          <button class="btn-action btn-pill-primary" onclick="stage4.checkAnswer3(true)">
+            공정하고 신중한 재판으로 국민의 자유와 권리를 두텁게 보장하기 위해
+          </button>
+          <button class="btn-action btn-pill-secondary" onclick="stage4.checkAnswer3(false)">
+            판사들에게 많은 일거리를 주기 위해
+          </button>
+          <button class="btn-action btn-pill-secondary" onclick="stage4.checkAnswer3(false)">
+            재판 비용을 많이 걷기 위해
+          </button>
+        `;
+      },
+
+      checkAnswer3(isCorrect) {
+        const fb = document.getElementById('s4-feedback');
+        fb.style.display = 'block';
+
+        if (isCorrect) {
+          audioManager.playFanfare();
+          game.completeStage(4);
+          fb.className = 'feedback-box correct';
+          fb.innerHTML = `
+            🎉 <strong>정답입니다! 완벽해요!</strong><br>
+            판사도 사람이기에 잘못 판결할 수 있습니다. 3심제는 잘못된 판결을 바로잡고 신중하고 공정한 재판을 통해 <strong>국민의 기본권을 보장</strong>하기 위한 필수적인 제도입니다!<br><br>
+            <button class="btn-action btn-primary-action" onclick="game.goToStage(5)">
+              최종 골든벨 & 명예 판사 임명장 받으러 가기 ➔
+            </button>
+          `;
+        } else {
+          audioManager.playWrong();
+          fb.className = 'feedback-box wrong';
+          fb.innerHTML = '앗, 다시 생각해보세요! 3심제는 국민의 억울함을 막기 위한 제도입니다.';
+        }
+      }
+    };
+
+    /* ==========================================================
+       8. STAGE 5 : 골든벨 퀴즈 & 명예 판사 임명장
+       ========================================================== */
+    const stage5 = {
+      quizzes: [
+        {
+          q: "판사가 외부의 간섭이나 권력의 압력을 받지 않고, 오직 헌법과 법률, 양심에 따라 독립하여 심판하는 원칙은?",
+          opts: [
+            "사법권의 독립",
+            "행정권의 우위",
+            "국회의 지휘권",
+            "비밀 재판주의"
+          ],
+          ans: 0,
+          exp: "공정한 재판을 위해 법관은 다른 국가 기관이나 여론의 간섭을 받지 않는 '사법권의 독립'이 엄격히 보장됩니다."
+        },
+        {
+          q: "다음 중 '민사 재판'에 해당하는 사건은 무엇일까요?",
+          opts: [
+            "친구에게 빌려준 자전거를 돌려받지 못해 분쟁이 생긴 경우",
+            "심야에 귀금속 매장 유리를 깨고 보석을 훔친 경우",
+            "다른 사람을 고의로 폭행하여 상해를 입힌 경우",
+            "보이스피싱 사기 조직을 결성하여 남을 속인 경우"
+          ],
+          ans: 0,
+          exp: "개인과 개인 간의 재산이나 계약 다툼은 '민사 재판'이며, 나머지 범죄 행위는 '형사 재판' 대상입니다."
+        },
+        {
+          q: "형사 재판에서 피해자와 사회 정의를 대신하여, 범죄자를 법원에 재판해달라고 청구(기소)하는 국가 기관은?",
+          opts: [
+            "검사 (Prosecutor)",
+            "변호인 (Attorney)",
+            "피고인 (Defendant)",
+            "배심원 (Jury)"
+          ],
+          ans: 0,
+          exp: "검사는 공익의 대표자로서 범죄를 수사하고 기소(공소 제기)하는 역할을 합니다."
+        },
+        {
+          q: "피고인이 법원의 판결로 유죄가 확정되기 전까지는 죄가 없는 것으로 보아야 한다는 헌법상 기본 원칙은?",
+          opts: [
+            "무죄 추정의 원칙",
+            "자백 우선의 원칙",
+            "유죄 추정의 원칙",
+            "비공개 재판주의"
+          ],
+          ans: 0,
+          exp: "억울한 누명을 쓴 사람이 생기지 않도록 확정 판결 전까지는 무죄로 추정합니다."
+        },
+        {
+          q: "1심 법원의 판결에 불복하여 2심 법원에 다시 재판을 청구하는 절차를 무엇이라고 부를까요?",
+          opts: [
+            "항소",
+            "상고",
+            "수사",
+            "구형"
+          ],
+          ans: 0,
+          exp: "1심 ➔ 2심은 항소, 2심 ➔ 3심(대법원)은 상고입니다."
+        }
+      ],
+      currentQ: 0,
+      score: 0,
+
+      init() {
+        this.currentQ = 0;
+        this.score = 0;
+        document.getElementById('s5-quiz-view').style.display = 'block';
+        document.getElementById('s5-cert-view').style.display = 'none';
+        this.loadQuestion();
+      },
+
+      loadQuestion() {
+        const qData = this.quizzes[this.currentQ];
+        document.getElementById('s5-q-num').innerText = `문제 ${this.currentQ + 1} / ${this.quizzes.length}`;
+        document.getElementById('s5-score').innerText = `현재 점수: ${this.score * 20}점`;
+        document.getElementById('s5-q-title').innerText = qData.q;
+
+        const optsContainer = document.getElementById('s5-q-options');
+        optsContainer.innerHTML = '';
+
+        qData.opts.forEach((optText, idx) => {
+          const btn = document.createElement('button');
+          btn.className = 'quiz-opt-btn';
+          btn.innerHTML = `<span style="font-weight:700; color:var(--primary);">${idx + 1}.</span> ${optText}`;
+          btn.onclick = () => this.selectAnswer(idx, btn);
+          optsContainer.appendChild(btn);
+        });
+      },
+
+      selectAnswer(selectedIdx, btnElement) {
+        const qData = this.quizzes[this.currentQ];
+        const allBtns = document.querySelectorAll('.quiz-opt-btn');
+        allBtns.forEach(b => b.style.pointerEvents = 'none');
+
+        if (selectedIdx === qData.ans) {
+          audioManager.playSuccess();
+          this.score++;
+          btnElement.classList.add('correct');
+          ui.showToast('🎉 정답입니다!');
+        } else {
+          audioManager.playWrong();
+          btnElement.classList.add('wrong');
+          allBtns[qData.ans].classList.add('correct');
+          ui.showToast(`오답입니다! 정답은 [${qData.ans + 1}번]입니다.`);
+        }
+
+        setTimeout(() => {
+          if (this.currentQ < this.quizzes.length - 1) {
+            this.currentQ++;
+            this.loadQuestion();
+          } else {
+            this.showResults();
+          }
+        }, 1200);
+      },
+
+      showResults() {
+        audioManager.playFanfare();
+        game.completeStage(5);
+        document.getElementById('s5-quiz-view').style.display = 'none';
+        document.getElementById('s5-cert-view').style.display = 'block';
+
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = now.getMonth() + 1;
+        const day = now.getDate();
+        document.getElementById('cert-date').innerText = `${year}년 ${month}월 ${day}일`;
+      },
+
+      generateCertificate() {
+        audioManager.playClick();
+        const inputName = document.getElementById('cert-name-input').value.trim();
+        if (!inputName) {
+          ui.showToast('이름을 입력해주세요!');
+          return;
+        }
+
+        document.getElementById('cert-display-name').innerText = `${inputName} (학생)`;
+        ui.showToast(`✨ ${inputName} 님의 명예 판사 임명장이 발급되었습니다!`);
+        audioManager.playFanfare();
+
+        document.getElementById('certificate-print-area').scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+
+    // 초기 실행
+    window.addEventListener('DOMContentLoaded', () => {
+      game.goToStage(0);
+    });
+  </script>
+</body>
+</html>
